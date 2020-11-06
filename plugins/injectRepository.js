@@ -26,7 +26,8 @@ export default (ctx, inject) => {
 
   const repositories = {
     teams: airtableRepository('Teams'),
-    games: airtableRepository('Games')
+    games: airtableRepository('Games'),
+    players: airtableRepository('Players')
     //...
   }
 

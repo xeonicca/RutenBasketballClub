@@ -1,6 +1,7 @@
 export const state = () => ({
   games: [],
-  teams: []
+  teams: [],
+  players: []
 })
 
 export const mutations = {
@@ -10,6 +11,10 @@ export const mutations = {
 
   setTeams (state, teams) {
     state.teams = teams
+  },
+
+  setPlayers (state, players) {
+    state.players = players
   }
 }
 
@@ -17,13 +22,16 @@ export const mutations = {
 export const actions = {
   async nuxtServerInit ({dispatch, commit}, {req}) {
     console.log('nuxtServerInit called')
-    await dispatch('fetchGames', {
-      sort: [{
-        field: 'Date Played',
-        direction: 'desc'
-      }]
-    })
-    await dispatch('fetchTeams')
+    return Promise.all([
+      dispatch('fetchGames', {
+        sort: [{
+          field: 'Date Played',
+          direction: 'desc'
+        }]
+      }),
+      dispatch('fetchTeams'),
+      dispatch('fetchPlayers')
+    ])
   },
 
   async fetchGames ({commit}, options) {
@@ -36,6 +44,12 @@ export const actions = {
     let teams = await this.$api.teams.index()
     commit('setTeams', teams)
     return teams
+  },
+
+  async fetchPlayers ({commit}) {
+    let players = await this.$api.players.index()
+    commit('setPlayers', players)
+    return players
   }
 }
 

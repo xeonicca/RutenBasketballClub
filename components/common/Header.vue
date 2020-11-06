@@ -1,12 +1,12 @@
 <template>
   <div class="bg-indigo-darker text-center p-4 px-6 flex items-center">
-    <div class="hidden lg:block lg:w-1/4 xl:w-1/5 pr-8">
+    <div class="md:hidden pr-3" id="mobile-nav-trigger" @click.prevent="toggleSidebar">
+      <div class="toggle p-2 block"><span></span></div>
+    </div>
+    <div class="lg:w-1/4 xl:w-1/5 pr-8">
       <nuxt-link to="/" class="title text-xl text-white flex justify-start pl-6 no-underline">
         Ruten Basketball Club
       </nuxt-link>
-    </div>
-    <div class="lg:hidden pr-3" id="mobile-nav-trigger">
-      <div class="toggle p-2 block"><span></span></div>
     </div>
     <div class="flex flex-grow items-center lg:w-3/4 xl:w-4/5">
       <span class="relative w-full">
@@ -21,3 +21,15 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    toggleSidebar() {
+      let sidebar = document.getElementById('sidebar')
+      sidebar.classList.toggle('hidden')
+    }
+  }
+
+}
+</script>
