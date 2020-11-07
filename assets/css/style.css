@@ -1,6 +1,3 @@
- @tailwind preflight;
- @tailwind components;
-
 .max-width-tiny {
   max-width: 7rem;
 }
@@ -18,7 +15,7 @@
 }
 
 .bg-indigo-medium {
-    background-color: #38406C;
+  background-color: #38406C;
 }
 
 .bg-grey-lighter-2 {
@@ -167,3 +164,30 @@
   text-transform: uppercase;
   font-weight: bold;
  }
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.main-header {
+  height: 64px;
+}
+.main-container {
+  height: calc(100vh - 64px);
+}
+
+#content {
+  overflow-y: auto;
+  padding-bottom: 20px;
+  -webkit-overflow-scrolling: touch;
+}

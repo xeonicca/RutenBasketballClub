@@ -1,7 +1,7 @@
 <template>
   <div class="bg-grey-lighter font-sans antialiased">
     <Header />
-    <div class="flex">
+    <div class="main-container flex">
       <Sidebar />
       <Nuxt />
 

@@ -9,24 +9,19 @@
     </div>
 
     <!-- Library -->
-    <div class="hidden px-2 pt-2 md:px-0 flex-wrap order-2 pb-8 js-tab-pane active" id="section-library">
-      <nuxt-link v-for="p in playersWithTeam" :to="`/players/${p.id}`" class="flex flex-row sm:flex-col items-center sm:items-start w-1/2 sm:w-1/3 md:w-1/5 p-4 no-underline text-black" activeClass="text-darker-indigo" :key="p.id">
-        <img :src="getAvatar(p.id)" alt="book-01" class="w-1/3 sm:w-full transition-normal hover:brighter hover:translate-y-1 hover:border-indigo">
-        <div class="ml-3 sm:ml-0 w-2/3 sm:w-full sm:w-full sm:flex sm:justify-center sm:flex-wrap">
-          <p class="text-sm my-2 font-bold text-left sm:text-center sm:flex-none sm:w-full">{{ p.name }}</p>
-          <label class="inline-block sm:flex-none rounded-full bg-indigo-light text-white px-2 py-1/2 text-xs">{{ p.team.name || '' }}</label>
-        </div>
-      </nuxt-link>
+    <div class="flex px-2 pt-2 md:px-0 flex-wrap order-2 pb-8" id="section-library">
+      <PlayerCard v-for="p in playersWithTeam" :key="p.id" :player="p" />
     </div>
   </div>
 </template>
 <script>
+import PlayerCard from '~/components/PlayerCard'
 import {mapState, mapGetters} from 'vuex'
-import { AvatarGenerator } from 'random-avatar-generator';
-
-const generator = new AvatarGenerator();
 
 export default {
+  components: {
+    PlayerCard
+  },
   computed: {
     ...mapState(['players']),
     ...mapGetters(['teamsGroupedById']),
@@ -40,10 +35,6 @@ export default {
     }
   },
 
-  methods: {
-    getAvatar(seed) {
-      return generator.generateRandomAvatar(seed);
-    }
-  }
+  
 }
 </script>

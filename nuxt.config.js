@@ -24,14 +24,14 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
-    'vuesax/dist/vuesax.css',
-    '~/assets/css/output.css',
-    '~/assets/css/style.css'
+    // 'vuesax/dist/vuesax.css',
+    '~/assets/css/style.css',
+    // '~/assets/css/content.scss'
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    '@/plugins/vuesax',
+    // '@/plugins/vuesax',
     '@/plugins/injectRepository.js'
   ],
 
@@ -39,8 +39,7 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
-  buildModules: [
-  ],
+  buildModules: ['@nuxtjs/tailwindcss'],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [

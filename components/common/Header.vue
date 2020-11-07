@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-indigo-darker text-center p-4 px-6 flex items-center">
+  <div class="main-header bg-indigo-darker text-center p-4 px-6 flex items-center">
     <div class="md:hidden pr-3" id="mobile-nav-trigger" @click.prevent="toggleSidebar">
       <div class="toggle p-2 block"><span></span></div>
     </div>
