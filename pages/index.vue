@@ -11,13 +11,13 @@
 
     <div class="p-12 mt-4 md:flex flex-wrap order-1 md:-order-1 md:shadow-md lh-2 l bg-white">
       <div class="flex flex-row sm:flex-col items-center sm:items-start w-full">
-        <nuxt-content :document="announcement" />
+        <nuxt-content class="prose prose-sm mx-auto" :document="announcement" />
       </div>
     </div>
 
     <div class="p-12 mt-4 md:flex flex-wrap order-1 md:-order-1 md:shadow-md lh-2 l bg-white">
       <div class="flex flex-row sm:flex-col items-center sm:items-start w-full">
-        <nuxt-content :document="rules" />
+        <nuxt-content class="prose prose-sm mx-auto" :document="rules" />
       </div>
     </div>
   </div>
