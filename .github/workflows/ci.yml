@@ -43,4 +43,7 @@ jobs:
 
       - name: Install dependencies 👨🏻‍💻
         run: yarn
+      
+      - name: Generate & Deploy
+        run: yarn generate & yarn deploy
 
