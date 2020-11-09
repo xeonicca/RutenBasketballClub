@@ -46,4 +46,7 @@ jobs:
       
       - name: Generate & Deploy
         run: yarn generate & yarn deploy
+        env:
+          SURGE_LOGIN: soundedrain@gmail.com
+          SURGE_TOKEN: 1527c00055e3df84852f4e5653f1834d
 
