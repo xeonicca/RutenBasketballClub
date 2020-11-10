@@ -8,29 +8,35 @@
       </div>
     </div>
     <!-- Desktop Stats -->
-    <div class="hidden px-6 md:px-0 mt-4 md:flex flex-wrap order-1 md:-order-1 md:shadow-md js-tab-pane" id="section-stats">
+    <div class="px-6 md:px-0 mt-4 md:flex flex-wrap order-1 md:-order-1 md:shadow-md">
       <div class="w-full p-8 md:rounded-r-none bg-white shadow-md md:shadow-none">
-        <div class="flex">
-          <div class="w-1/3">
-            <p class="text-indigo text-sm p-2">性別</p>
-            <p class="font-medium text-sm pl-2">{{ thisPlayer.gender }}</p>
+        <div class="flex flex-wrap">
+          <div class="w-full sm:w-1/4">
+            <img :src="getAvatar(thisPlayer.id)" alt="book-01" class="w-full transition-normal hover:brighter hover:translate-y-1 hover:border-indigo">
           </div>
-          <div class="w-1/3">
-            <p class="text-indigo text-sm p-2">擅長位置</p>
-            <div class="font-medium text-sm pl-2">
-              <label for="" v-for="p in thisPlayer.position" class="hidden sm:inline-block rounded-full bg-indigo text-white px-2 py-1/2 text-xs mr-2">{{ p }}</label>
+          <div class="flex flex-wrap w-full sm:flex-1 sm:pl-8">
+            <div class="w-1/2 mt-4 sm:mt-0">
+              <p class="text-indigo text-sm p-2">性別</p>
+              <p class="font-medium text-sm pl-2">{{ thisPlayer.gender }}</p>
+            </div>
+            <div class="w-1/2 mt-4 sm:mt-0">
+              <p class="text-indigo text-sm p-2">擅長位置</p>
+              <div class="font-medium text-sm pl-2">
+                <label for="" v-for="p in thisPlayer.position" class="inline-block rounded-full bg-indigo text-white px-2 py-1/2 text-xs mr-2">{{ p }}</label>
+              </div>
+            </div>
+            <div class="w-full sm:w-1/2 mt-4 sm:mt-0">
+              <p class="text-indigo text-sm p-2">Draft Status</p>
+              <div class="font-medium text-sm pl-2">
+                1st Round 1st Pick
+              </div>
+            </div>
+            <div class="w-full sm:w-1/2 flex-none mt-4 sm:mt-0">
+              <p class="text-indigo text-sm p-2">Memo</p>
+              <p class="font-medium text-sm pl-2 leading-normal">{{ thisPlayer.memo }}</p>
             </div>
           </div>
-          <div class="w-1/3">
-            <p class="text-indigo text-sm p-2">Draft Status</p>
-            <div class="font-medium text-sm pl-2">
-              1st Round 1st Pick
-            </div>
-          </div>
-        </div>
-        <div class="pt-6">
-          <p class="text-indigo text-sm p-2">Memo</p>
-          <p class="font-medium text-sm pl-2 leading-normal">{{ thisPlayer.memo }}</p>
+
         </div>
       </div>
     </div>
@@ -38,7 +44,10 @@
 </template>
 
 <script>
+import { AvatarGenerator } from 'random-avatar-generator';
 import {mapGetters} from 'vuex'
+
+const generator = new AvatarGenerator();
 export default {
   props: {
     player: Object
@@ -48,6 +57,11 @@ export default {
     ...mapGetters(['playerGroupedById', 'teamsGroupedById']),
     thisPlayer() {
       return this.playerGroupedById[this.$route.params.id]
+    }
+  },
+  methods: {
+    getAvatar(seed) {
+      return generator.generateRandomAvatar(seed);
     }
   }
 }
