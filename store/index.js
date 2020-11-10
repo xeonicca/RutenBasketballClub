@@ -69,5 +69,13 @@ export const getters = {
       all[v.id] = v
       return all
     }, {})
+  },
+
+  playerGroupedById(state, {teamsGroupedById}) {
+    return state.players.reduce((all, v) => {
+      all[v.id] = v
+      all[v.id]['teamDetail'] = teamsGroupedById[v.team[0]] || {}
+      return all
+    }, {})
   }
 }
