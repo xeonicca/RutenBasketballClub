@@ -18,6 +18,8 @@
             <div class="w-1/2 mt-4 sm:mt-0">
               <p class="text-indigo text-sm p-2">性別</p>
               <p class="font-medium text-sm pl-2">{{ thisPlayer.gender }}</p>
+              <p class="text-indigo text-sm p-2">身高級距</p>
+              <p class="font-medium text-sm pl-2">{{ thisPlayer.height }}</p>
             </div>
             <div class="w-1/2 mt-4 sm:mt-0">
               <p class="text-indigo text-sm p-2">擅長位置</p>

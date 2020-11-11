@@ -9,6 +9,9 @@ on:
     branches:
       - main
       - master
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '*/15 * * * *'
 
 jobs:
   ci:
@@ -43,10 +46,10 @@ jobs:
 
       - name: Install dependencies 👨🏻‍💻
         run: yarn
-      
+
       - name: Generate
         run: yarn generate
-        
+
       - name: Deploy
         run: yarn deploy
         env:

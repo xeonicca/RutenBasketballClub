@@ -74,7 +74,12 @@ export const getters = {
   playerGroupedById(state, {teamsGroupedById}) {
     return state.players.reduce((all, v) => {
       all[v.id] = v
-      all[v.id]['teamDetail'] = teamsGroupedById[v.team[0]] || {}
+      if(v.team && v.team.length) {
+        all[v.id]['teamDetail'] = teamsGroupedById[v.team[0]] || {}
+      } else {
+        all[v.id]['teamDetail'] = {}
+      }
+
       return all
     }, {})
   }
