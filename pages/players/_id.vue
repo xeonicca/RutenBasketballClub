@@ -28,10 +28,17 @@
               </div>
             </div>
             <div class="w-full sm:w-1/2 mt-4 sm:mt-0">
-              <p class="text-indigo text-sm p-2">Draft Status</p>
-              <div class="font-medium text-sm pl-2">
-                1st Round 1st Pick
-              </div>
+              <template v-if="thisPlayer.draftPool">
+                <p class="text-indigo text-sm p-2">Draft Status</p>
+                <div class="font-medium text-sm pl-2">
+                  1st Round 1st Pick
+                </div>
+              </template>
+              <template v-else>
+                <div class="font-medium text-sm pl-2">
+                  自由球員
+                </div>
+              </template>
             </div>
             <div class="w-full sm:w-1/2 flex-none mt-4 sm:mt-0">
               <p class="text-indigo text-sm p-2">Memo</p>
