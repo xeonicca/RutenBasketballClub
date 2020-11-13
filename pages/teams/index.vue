@@ -15,7 +15,7 @@
         <div class="ml-3 sm:ml-0 w-2/3 sm:w-full">
           <p class="text-sm my-2 font-medium sm:font-normal">apartmento Aug 2018</p>
           <p class="block sm:hidden mt-2 mb-3 text-sm leading-medium">Eu quo donec pellentesque, urna velit. Ultrices ante iaculis ligula praesent.</p>
-          <label for="" class="hidden sm:inline-block rounded-full libre-bg-grey text-white px-2 py-1/2 text-xs">Loaned</label>
+          <label for="" class="hidden sm:inline-block rounded-full libre-bg-grey text-white px-2 py-1 text-xs">Loaned</label>
           <div class="block sm:hidden relative">
             <select class="block appearance-none w-full text-sm bg-white border border-grey-light hover:border-grey pl-3 py-1 pr-8 rounded shadow leading-normal focus:outline-none focus:shadow-outline">
               <option>Start</option>
@@ -35,7 +35,7 @@
         <div class="ml-3 sm:ml-0 w-2/3 sm:w-full">
           <p class="text-sm my-2 font-medium sm:font-normal">Popeye Aug 2018</p>
           <p class="block sm:hidden mt-2 mb-3 text-sm leading-medium">Eu quo donec pellentesque, urna velit. Ultrices ante iaculis ligula praesent.</p>
-          <label for="" class="hidden sm:inline-block rounded-full libre-bg-yellow text-white px-2 py-1/2 text-xs">Started</label>
+          <label for="" class="hidden sm:inline-block rounded-full libre-bg-yellow text-white px-2 py-1 text-xs">Started</label>
           <div class="block sm:hidden relative">
             <select class="block appearance-none w-full text-sm bg-white border border-grey-light hover:border-grey pl-3 py-1 pr-8 rounded shadow leading-normal focus:outline-none focus:shadow-outline">
               <option>Start</option>
@@ -56,7 +56,7 @@
         <div class="ml-3 sm:ml-0 w-2/3 sm:w-full">
           <p class="text-sm my-2 font-medium sm:font-normal">Brutus Aug 2018</p>
           <p class="block sm:hidden mt-2 mb-3 text-sm leading-medium">Eu quo donec pellentesque, urna velit. Ultrices ante iaculis ligula praesent.</p>
-          <label for="" class="hidden sm:inline-block rounded-full libre-bg-pink text-white px-2 py-1/2 text-xs">Reading</label>
+          <label for="" class="hidden sm:inline-block rounded-full libre-bg-pink text-white px-2 py-1 text-xs">Reading</label>
           <div class="block sm:hidden relative">
             <select class="block appearance-none w-full text-sm bg-white border border-grey-light hover:border-grey pl-3 py-1 pr-8 rounded shadow leading-normal focus:outline-none focus:shadow-outline">
               <option>Start</option>
@@ -76,7 +76,7 @@
         <div class="ml-3 sm:ml-0 w-2/3 sm:w-full">
           <p class="text-sm my-2 font-medium sm:font-normal">Harnako Aug 2018</p>
           <p class="block sm:hidden mt-2 mb-3 text-sm leading-medium">Eu quo donec pellentesque, urna velit. Ultrices ante iaculis ligula praesent.</p>
-          <label for="" class="hidden sm:inline-block rounded-full bg-indigo text-white px-2 py-1/2 text-xs">Finished</label>
+          <label for="" class="hidden sm:inline-block rounded-full bg-indigo text-white px-2 py-1 text-xs">Finished</label>
           <div class="block sm:hidden relative">
             <select class="block appearance-none w-full text-sm bg-white border border-grey-light hover:border-grey pl-3 py-1 pr-8 rounded shadow leading-normal focus:outline-none focus:shadow-outline">
               <option>Start</option>
@@ -96,7 +96,7 @@
         <div class="ml-3 sm:ml-0 w-2/3 sm:w-full">
           <p class="text-sm my-2 font-medium sm:font-normal">Premium 2 2018</p>
           <p class="block sm:hidden mt-2 mb-3 text-sm leading-medium">Eu quo donec pellentesque, urna velit. Ultrices ante iaculis ligula praesent.</p>
-          <label for="" class="hidden sm:inline-block rounded-full bg-indigo text-white px-2 py-1/2 text-xs">Finished</label>
+          <label for="" class="hidden sm:inline-block rounded-full bg-indigo text-white px-2 py-1 text-xs">Finished</label>
           <div class="block sm:hidden relative">
             <select class="block appearance-none w-full text-sm bg-white border border-grey-light hover:border-grey pl-3 py-1 pr-8 rounded shadow leading-normal focus:outline-none focus:shadow-outline">
               <option>Start</option>
@@ -116,7 +116,7 @@
         <div class="ml-3 sm:ml-0 w-2/3 sm:w-full">
           <p class="text-sm my-2 font-medium sm:font-normal">Premium 4 2018</p>
           <p class="block sm:hidden mt-2 mb-3 text-sm leading-medium">Eu quo donec pellentesque, urna velit. Ultrices ante iaculis ligula praesent.</p>
-          <label for="" class="hidden sm:inline-block rounded-full bg-indigo text-white px-2 py-1/2 text-xs">Finished</label>
+          <label for="" class="hidden sm:inline-block rounded-full bg-indigo text-white px-2 py-1 text-xs">Finished</label>
           <div class="block sm:hidden relative">
             <select class="block appearance-none w-full text-sm bg-white border border-grey-light hover:border-grey pl-3 py-1 pr-8 rounded shadow leading-normal focus:outline-none focus:shadow-outline">
               <option>Start</option>
@@ -136,7 +136,7 @@
         <div class="ml-3 sm:ml-0 w-2/3 sm:w-full">
           <p class="text-sm my-2 font-medium sm:font-normal">Brutus Aug 2018</p>
           <p class="block sm:hidden mt-2 mb-3 text-sm leading-medium">Eu quo donec pellentesque, urna velit. Ultrices ante iaculis ligula praesent.</p>
-          <label for="" class="hidden sm:inline-block rounded-full libre-bg-pink text-white px-2 py-1/2 text-xs">Reading</label>
+          <label for="" class="hidden sm:inline-block rounded-full libre-bg-pink text-white px-2 py-1 text-xs">Reading</label>
           <div class="block sm:hidden relative">
             <select class="block appearance-none w-full text-sm bg-white border border-grey-light hover:border-grey pl-3 py-1 pr-8 rounded shadow leading-normal focus:outline-none focus:shadow-outline">
               <option>Start</option>
