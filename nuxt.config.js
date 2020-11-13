@@ -66,7 +66,7 @@ export default {
     AIRTABLE_BASE: 'appFJbbxZKkK4d1bS'
   },
 
-  render: {
-    resourceHints: false
+  generate: {
+    interval: 1000
   }
 }
