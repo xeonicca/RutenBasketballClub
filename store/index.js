@@ -47,7 +47,7 @@ export const actions = {
   },
 
   async fetchPlayers ({commit}) {
-    let players = await this.$api.players.index()
+    let players = await this.$api.players.index(null, "Draft Pool")
     commit('setPlayers', players)
     return players
   }
@@ -71,13 +71,13 @@ export const getters = {
     }, {})
   },
 
-  playerGroupedById(state, {teamsGroupedById}) {
+  playerGroupedByName(state, {teamsGroupedById}) {
     return state.players.reduce((all, v) => {
-      all[v.id] = v
+      all[v.name] = v
       if(v.team && v.team.length) {
-        all[v.id]['teamDetail'] = teamsGroupedById[v.team[0]] || {}
+        all[v.name]['teamDetail'] = teamsGroupedById[v.team[0]] || {}
       } else {
-        all[v.id]['teamDetail'] = {}
+        all[v.name]['teamDetail'] = {}
       }
 
       return all

@@ -81,9 +81,9 @@ export default {
   },
 
   computed: {
-    ...mapGetters(['playerGroupedById', 'teamsGroupedById']),
+    ...mapGetters(['playerGroupedByName', 'teamsGroupedById']),
     thisPlayer() {
-      return this.playerGroupedById[this.$route.params.id]
+      return this.playerGroupedByName[this.$route.params.name]
     }
   },
   methods: {
