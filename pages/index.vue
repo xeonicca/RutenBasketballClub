@@ -16,13 +16,13 @@
       </div>
     </div> -->
 
-    <div class="p-12 mt-4 md:flex flex-wrap md:shadow-md lh-2 l bg-white">
+    <div class="p-8 sm:p-12 m-4 sm:mx-0 md:flex flex-wrap md:shadow-md lh-2 l bg-white">
       <div class="flex flex-row sm:flex-col items-center sm:items-start w-full">
         <nuxt-content class="prose prose-sm" :document="draft" />
       </div>
     </div>
 
-    <div class="p-12 mt-4 md:flex flex-wrap md:shadow-md lh-2 l bg-white">
+    <div class="p-8 sm:p-12 m-4 sm:mx-0 md:flex flex-wrap md:shadow-md lh-2 l bg-white">
       <div class="flex flex-row sm:flex-col items-center sm:items-start w-full">
         <nuxt-content class="prose prose-sm" :document="rules" />
       </div>
