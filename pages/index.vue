@@ -18,9 +18,16 @@
 
     <div class="p-12 mt-4 md:flex flex-wrap md:shadow-md lh-2 l bg-white">
       <div class="flex flex-row sm:flex-col items-center sm:items-start w-full">
+        <nuxt-content class="prose prose-sm" :document="draft" />
+      </div>
+    </div>
+
+    <div class="p-12 mt-4 md:flex flex-wrap md:shadow-md lh-2 l bg-white">
+      <div class="flex flex-row sm:flex-col items-center sm:items-start w-full">
         <nuxt-content class="prose prose-sm" :document="rules" />
       </div>
     </div>
+
   </div>
 </template>
 <script>
@@ -33,10 +40,12 @@ export default {
   async asyncData ({ $content }) {
     const announcement = await $content('hello').fetch()
     const rules = await $content('rules').fetch()
+    const draft = await $content('draft').fetch()
 
     return {
       announcement,
-      rules
+      rules,
+      draft
     }
   }
 }
