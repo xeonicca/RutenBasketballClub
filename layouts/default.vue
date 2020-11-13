@@ -1,8 +1,8 @@
 <template>
   <div class="bg-grey-lighter font-sans antialiased">
-    <Header />
+    <Header :ifMenuVisible="ifMenuVisible" @menu-opened="toggleMenu" />
     <div class="main-container flex">
-      <Sidebar />
+      <Sidebar :ifMenuVisible="ifMenuVisible" @menu-opened="toggleMenu" />
       <Nuxt />
 
       <div class="hidden absolute pin-b z-10 lg:relative lg:block w-full lg:w-1/5 bg-grey-lighter-2 px-6 pt-10" id="profile">
@@ -42,6 +42,15 @@ export default {
   components: {
     Header,
     Sidebar
+  },
+  data() {
+    return {ifMenuVisible: false}
+  },
+
+  methods: {
+    toggleMenu(value) {
+      this.ifMenuVisible = value
+    }
   }
 }
 </script>

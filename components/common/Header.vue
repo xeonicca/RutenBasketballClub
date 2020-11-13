@@ -1,7 +1,7 @@
 <template>
   <div class="main-header bg-indigo-darker text-center p-4 px-6 flex items-center">
     <div class="md:hidden pr-3" id="mobile-nav-trigger" @click.prevent="toggleSidebar">
-      <div class="toggle p-2 block"><span></span></div>
+      <div class="toggle p-2 block" :class="{'open': ifMenuVisible}"><span></span></div>
     </div>
     <div class="lg:w-1/4 xl:w-1/5 pr-8">
       <nuxt-link to="/" class="title text-xl text-white flex justify-start pl-6 no-underline">
@@ -24,10 +24,12 @@
 
 <script>
 export default {
+  props: {
+    ifMenuVisible: Boolean
+  },
   methods: {
     toggleSidebar() {
-      let sidebar = document.getElementById('sidebar')
-      sidebar.classList.toggle('hidden')
+      this.$emit('menu-opened', !this.ifMenuVisible)
     }
   }
 

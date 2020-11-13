@@ -1,5 +1,5 @@
 <template>
-  <nav class="absolute md:relative lg:flex lg:text-lg bg-grey-light md:bg-transparent pin-l pin-r md:pin-none py-4 px-6 lg:pt-10 lg:pl-12 lg:pr-6 lg:mt-0 overflow-y-auto md:w-1/4 lg:w-1/5 xl:w-1/6 md:border-r z-40 hidden md:block" id="sidebar">
+  <nav class="absolute md:relative lg:flex lg:text-lg bg-grey-light md:bg-transparent pin-l pin-r md:pin-none py-4 px-6 lg:pt-10 lg:pl-12 lg:pr-6 lg:mt-0 overflow-y-auto md:w-1/4 lg:w-1/5 xl:w-1/6 md:border-r z-40 md:block" id="sidebar" @click="closeHeader" :class="{'hidden': !ifMenuVisible}">
     <ul class="list-reset mb-8 w-full">
       <li class="ml-2 mb-4 flex">
         <img src="/images/iconmonstr-home-4.svg" alt="home-icon" class="w-4 h-4 mr-2">
@@ -37,10 +37,20 @@
 <script>
 import {mapGetters} from 'vuex'
 export default {
+  props: {
+    ifMenuVisible: Boolean
+  },
+
   computed: {
     ...mapGetters(['gamesGroupedByDate']),
     dateEntryList() {
       return Object.keys(this.gamesGroupedByDate).sort((a, b) =>  a > b)
+    }
+  },
+
+  methods: {
+    closeHeader() {
+      this.$emit('menu-opened', false)
     }
   }
 }
