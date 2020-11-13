@@ -1,11 +1,7 @@
 <template>
-  <div class="flex flex-1 flex-col md:px-6 pt-10" id="content">
-    <!-- Title -->
+  <div class="flex flex-1 flex-col md:px-6 pt-4" id="content">
     <div class="px-6 md:px-0 flex justify-between items-center -order-1">
-      <div>
-        <h2 class="text-xl font-bold">{{ thisPlayer.name }}</h2>
-        <p class="text-grey-dark mt-2">{{ thisPlayer.teamDetail.name }}</p>
-      </div>
+      <nuxt-link class="text-indigo text-sm" to="/players">&lt; 球員列表</nuxt-link>
     </div>
     <!-- Desktop Stats -->
     <div class="px-6 md:px-0 mt-4 md:flex flex-wrap order-1 md:-order-1 md:shadow-md">
@@ -30,6 +26,10 @@
             </div>
           </div>
           <div class="flex flex-wrap w-full sm:flex-1 sm:pl-8">
+            <div class="w-full pl-2">
+              <h1 class="font-bold text-4xl">{{ thisPlayer.name }}</h1>
+              <p class="font-bold text-xl text-grey-dark mt-2">{{ thisPlayer.teamDetail.name }}</p>
+            </div>
             <div class="w-1/2 mt-4 sm:mt-0">
               <p class="text-indigo text-sm p-2">性別</p>
               <p class="font-medium text-sm pl-2">{{ thisPlayer.gender }}</p>
