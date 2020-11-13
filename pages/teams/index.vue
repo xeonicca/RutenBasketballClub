@@ -9,144 +9,33 @@
     </div>
 
     <!-- Library -->
-    <div class="hidden px-2 pt-2 md:px-0 flex-wrap order-2 pb-8 js-tab-pane active" id="section-library">
-      <div class="flex flex-row sm:flex-col items-center sm:items-start w-full xs:w-1/2 sm:w-1/3 md:w-1/5 p-4 js-book">
-        <img src="/images/book-01.jpg" alt="book-01" class="w-1/3 sm:w-full shadow-md transition-normal hover:brighter hover:translate-y-1 hover:shadow-lg hover:border-indigo">
-        <div class="ml-3 sm:ml-0 w-2/3 sm:w-full">
-          <p class="text-sm my-2 font-medium sm:font-normal">apartmento Aug 2018</p>
-          <p class="block sm:hidden mt-2 mb-3 text-sm leading-medium">Eu quo donec pellentesque, urna velit. Ultrices ante iaculis ligula praesent.</p>
-          <label for="" class="hidden sm:inline-block rounded-full libre-bg-grey text-white px-2 py-1 text-xs">Loaned</label>
-          <div class="block sm:hidden relative">
-            <select class="block appearance-none w-full text-sm bg-white border border-grey-light hover:border-grey pl-3 py-1 pr-8 rounded shadow leading-normal focus:outline-none focus:shadow-outline">
-              <option>Start</option>
-              <option>Loaned</option>
-              <option selected>Finished</option>
-            </select>
-            <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
-              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-              </svg>
+    <div class="hidden px-2 pt-2 md:px-0 flex-wrap order-2 pb-8 js-tab-pane active">
+      <div class="max-w-sm w-full sm:w-1/2 lg:w-1/3 py-6 px-3" v-for="team in teamsGroupedById">
+        <div class="bg-white shadow-xl rounded-lg overflow-hidden">
+          <div class="bg-cover bg-center h-56 p-4" style="background-image: url(https://images.unsplash.com/photo-1475855581690-80accde3ae2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80)">
+          </div>
+          <div class="p-4">
+            <p class="uppercase tracking-wide text-sm font-bold text-gray-700">{{ team.name }}</p>
+            <p class="font-bold text-3xl text-gray-900">{{ team.shortName }}</p>
+          </div>
+          <div class="flex p-4 border-t border-gray-300 text-gray-700">
+            <div class="flex-1 inline-flex items-center">
+              <p><span class="text-gray-900 font-bold">3</span> 名球員</p>
+            </div>
+            <div class="flex-1 inline-flex items-center">
+
+              <p><span class="text-gray-900 font-bold">2</span> 勝</p>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="flex flex-row sm:flex-col items-center sm:items-start w-full xs:w-1/2 sm:w-1/3 md:w-1/5 p-4">
-        <img src="/images/book-02.jpg" alt="book-02" class="w-1/3 sm:w-full shadow-md transition-normal hover:brighter hover:translate-y-1 hover:shadow-lg hover:border-indigo js-book">
-        <div class="ml-3 sm:ml-0 w-2/3 sm:w-full">
-          <p class="text-sm my-2 font-medium sm:font-normal">Popeye Aug 2018</p>
-          <p class="block sm:hidden mt-2 mb-3 text-sm leading-medium">Eu quo donec pellentesque, urna velit. Ultrices ante iaculis ligula praesent.</p>
-          <label for="" class="hidden sm:inline-block rounded-full libre-bg-yellow text-white px-2 py-1 text-xs">Started</label>
-          <div class="block sm:hidden relative">
-            <select class="block appearance-none w-full text-sm bg-white border border-grey-light hover:border-grey pl-3 py-1 pr-8 rounded shadow leading-normal focus:outline-none focus:shadow-outline">
-              <option>Start</option>
-              <option>Loaned</option>
-              <option>Reading</option>
-              <option selected>Finished</option>
-            </select>
-            <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
-              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="flex flex-row sm:flex-col items-center sm:items-start w-full xs:w-1/2 sm:w-1/3 md:w-1/5 p-4">
-        <img src="/images/book-03.jpg" alt="book-03" class="w-1/3 sm:w-full shadow-md transition-normal hover:brighter hover:translate-y-1 hover:shadow-lg hover:border-indigo js-book">
-        <div class="ml-3 sm:ml-0 w-2/3 sm:w-full">
-          <p class="text-sm my-2 font-medium sm:font-normal">Brutus Aug 2018</p>
-          <p class="block sm:hidden mt-2 mb-3 text-sm leading-medium">Eu quo donec pellentesque, urna velit. Ultrices ante iaculis ligula praesent.</p>
-          <label for="" class="hidden sm:inline-block rounded-full libre-bg-pink text-white px-2 py-1 text-xs">Reading</label>
-          <div class="block sm:hidden relative">
-            <select class="block appearance-none w-full text-sm bg-white border border-grey-light hover:border-grey pl-3 py-1 pr-8 rounded shadow leading-normal focus:outline-none focus:shadow-outline">
-              <option>Start</option>
-              <option>Loaned</option>
-              <option selected>Finished</option>
-            </select>
-            <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
-              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="flex flex-row sm:flex-col items-center sm:items-start w-full xs:w-1/2 sm:w-1/3 md:w-1/5 p-4">
-        <img src="/images/book-04.jpg" alt="book-04" class="w-1/3 sm:w-full shadow-md transition-normal hover:brighter hover:translate-y-1 hover:shadow-lg hover:border-indigo js-book">
-        <div class="ml-3 sm:ml-0 w-2/3 sm:w-full">
-          <p class="text-sm my-2 font-medium sm:font-normal">Harnako Aug 2018</p>
-          <p class="block sm:hidden mt-2 mb-3 text-sm leading-medium">Eu quo donec pellentesque, urna velit. Ultrices ante iaculis ligula praesent.</p>
-          <label for="" class="hidden sm:inline-block rounded-full bg-indigo text-white px-2 py-1 text-xs">Finished</label>
-          <div class="block sm:hidden relative">
-            <select class="block appearance-none w-full text-sm bg-white border border-grey-light hover:border-grey pl-3 py-1 pr-8 rounded shadow leading-normal focus:outline-none focus:shadow-outline">
-              <option>Start</option>
-              <option>Loaned</option>
-              <option selected>Finished</option>
-            </select>
-            <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
-              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="flex flex-row sm:flex-col items-center sm:items-start w-full xs:w-1/2 sm:w-1/3 md:w-1/5 p-4">
-        <img src="/images/book-05.jpg" alt="book-05" class="w-1/3 sm:w-full shadow-md transition-normal hover:brighter hover:translate-y-1 hover:shadow-lg hover:border-indigo js-book">
-        <div class="ml-3 sm:ml-0 w-2/3 sm:w-full">
-          <p class="text-sm my-2 font-medium sm:font-normal">Premium 2 2018</p>
-          <p class="block sm:hidden mt-2 mb-3 text-sm leading-medium">Eu quo donec pellentesque, urna velit. Ultrices ante iaculis ligula praesent.</p>
-          <label for="" class="hidden sm:inline-block rounded-full bg-indigo text-white px-2 py-1 text-xs">Finished</label>
-          <div class="block sm:hidden relative">
-            <select class="block appearance-none w-full text-sm bg-white border border-grey-light hover:border-grey pl-3 py-1 pr-8 rounded shadow leading-normal focus:outline-none focus:shadow-outline">
-              <option>Start</option>
-              <option>Loaned</option>
-              <option selected>Finished</option>
-            </select>
-            <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
-              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="flex flex-row sm:flex-col items-center sm:items-start w-full xs:w-1/2 sm:w-1/3 md:w-1/5 p-4">
-        <img src="/images/book-06.jpg" alt="book-06" class="w-1/3 sm:w-full shadow-md transition-normal hover:brighter hover:translate-y-1 hover:shadow-lg hover:border-indigo js-book">
-        <div class="ml-3 sm:ml-0 w-2/3 sm:w-full">
-          <p class="text-sm my-2 font-medium sm:font-normal">Premium 4 2018</p>
-          <p class="block sm:hidden mt-2 mb-3 text-sm leading-medium">Eu quo donec pellentesque, urna velit. Ultrices ante iaculis ligula praesent.</p>
-          <label for="" class="hidden sm:inline-block rounded-full bg-indigo text-white px-2 py-1 text-xs">Finished</label>
-          <div class="block sm:hidden relative">
-            <select class="block appearance-none w-full text-sm bg-white border border-grey-light hover:border-grey pl-3 py-1 pr-8 rounded shadow leading-normal focus:outline-none focus:shadow-outline">
-              <option>Start</option>
-              <option>Loaned</option>
-              <option selected>Finished</option>
-            </select>
-            <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
-              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="flex flex-row sm:flex-col items-center sm:items-start w-full xs:w-1/2 sm:w-1/3 md:w-1/5 p-4">
-        <img src="/images/book-07.jpg" alt="book-07" class="w-1/3 sm:w-full shadow-md transition-normal hover:brighter hover:translate-y-1 hover:shadow-lg hover:border-indigo js-book">
-        <div class="ml-3 sm:ml-0 w-2/3 sm:w-full">
-          <p class="text-sm my-2 font-medium sm:font-normal">Brutus Aug 2018</p>
-          <p class="block sm:hidden mt-2 mb-3 text-sm leading-medium">Eu quo donec pellentesque, urna velit. Ultrices ante iaculis ligula praesent.</p>
-          <label for="" class="hidden sm:inline-block rounded-full libre-bg-pink text-white px-2 py-1 text-xs">Reading</label>
-          <div class="block sm:hidden relative">
-            <select class="block appearance-none w-full text-sm bg-white border border-grey-light hover:border-grey pl-3 py-1 pr-8 rounded shadow leading-normal focus:outline-none focus:shadow-outline">
-              <option>Start</option>
-              <option>Loaned</option>
-              <option selected>Finished</option>
-            </select>
-            <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
-              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-              </svg>
+          <div class="px-4 pt-3 pb-4 border-t border-gray-300 bg-gray-100">
+            <div class="text-xs uppercase font-bold text-gray-600 tracking-wide">GM</div>
+            <div class="flex items-center pt-2">
+              <div class="bg-cover bg-center w-10 h-10 rounded-full mr-3" style="background-image: url(https://images.unsplash.com/photo-1500522144261-ea64433bbe27?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80)">
+              </div>
+              <div>
+                <p class="font-bold text-gray-900">Tiffany Heffner</p>
+                <p class="text-sm text-gray-700">(555) 555-4321</p>
+              </div>
             </div>
           </div>
         </div>
