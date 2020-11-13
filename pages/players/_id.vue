@@ -11,23 +11,24 @@
             <img class="w-full object-fit" :src="thisPlayer.image && thisPlayer.image[0].url || getAvatar(thisPlayer.id)" :alt="thisPlayer.name">
             <div class="hidden overflow-hidden relative w-full text-center mt-4 mb-4">
               <button class="bg-blue-500 hover:bg-blue-light text-white font-bold py-2 px-4 inline-flex items-center md:w-1/2">
-                  <svg fill="#FFF" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/>
-                    </svg>
-                    <span class="ml-2">更換圖片</span>
-                </button>
-                <input
-                    class="cursor-pointer absolute block py-2 px-4 w-full opacity-0 pin-r pin-t"
-                    type="file"
-                    name="image[]"
-                    accept="image/*"
+                <svg fill="#FFF" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0h24v24H0z" fill="none"/>
+                      <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/>
+                  </svg>
+                  <span class="ml-2">更換圖片</span>
+              </button>
+              <input
+                  class="cursor-pointer absolute block py-2 px-4 w-full opacity-0 pin-r pin-t"
+                  type="file"
+                  name="image[]"
+                  accept="image/*"
                 >
             </div>
           </div>
           <div class="flex flex-wrap w-full sm:flex-1 sm:pl-8 mt-8 sm:mt-0">
             <div class="w-full pl-2 mb-0 sm:mb-4">
-              <p class="font-bold text-xl text-indigo mb-1">{{ thisPlayer.teamDetail.name || '未分隊' }}</p>
+              <p v-if="thisPlayer.draftPool === 'yes'" class="font-bold text-xl text-indigo mb-1">{{ thisPlayer.teamDetail.name || '未分隊' }}</p>
+              <p v-else class="font-bold text-xl text-grey-darker mb-1">自由球員</p>
               <h1 class="font-bold text-4xl">{{ thisPlayer.name }}</h1>
             </div>
             <div class="w-1/2 mt-4 sm:mt-0">
