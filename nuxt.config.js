@@ -64,5 +64,9 @@ export default {
   env: {
     AIRTABLE_KEY: 'keyPagIg3OoIgDKz6',
     AIRTABLE_BASE: 'appFJbbxZKkK4d1bS'
+  },
+
+  render: {
+    resourceHints: false
   }
 }
