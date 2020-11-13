@@ -25,10 +25,10 @@
                 >
             </div>
           </div>
-          <div class="flex flex-wrap w-full sm:flex-1 sm:pl-8">
-            <div class="w-full pl-2">
+          <div class="flex flex-wrap w-full sm:flex-1 sm:pl-8 mt-8 sm:mt-0">
+            <div class="w-full pl-2 mb-0 sm:mb-4">
+              <p class="font-bold text-xl text-indigo mb-1">{{ thisPlayer.teamDetail.name || '未分隊' }}</p>
               <h1 class="font-bold text-4xl">{{ thisPlayer.name }}</h1>
-              <p class="font-bold text-xl text-grey-dark mt-2">{{ thisPlayer.teamDetail.name }}</p>
             </div>
             <div class="w-1/2 mt-4 sm:mt-0">
               <p class="text-indigo text-sm p-2">性別</p>
@@ -41,10 +41,10 @@
             <div class="w-1/2 mt-4 sm:mt-0">
               <p class="text-indigo text-sm p-2">擅長位置</p>
               <div class="font-medium text-sm pl-2">
-                <label for="" v-for="p in thisPlayer.position" class="inline-block rounded-full bg-indigo text-white px-2 py-1 text-xs mr-2">{{ p }}</label>
+                <label for="" v-for="p in thisPlayer.position" class="inline-block rounded-full bg-green-500 text-white px-2 py-1 text-xs mr-2 mb-2">{{ p }}</label>
               </div>
             </div>
-            <div class="w-full sm:w-1/2 mt-4 sm:mt-0">
+            <div class="w-full sm:w-1/2 mt-4">
               <template v-if="thisPlayer.draftPool === 'yes'">
                 <p class="text-indigo text-sm p-2">Draft Status</p>
                 <div class="font-medium text-sm pl-2">
@@ -57,7 +57,7 @@
                 </div>
               </template>
             </div>
-            <div class="w-full sm:w-1/2 flex-none mt-4 sm:mt-0">
+            <div class="w-full sm:w-1/2 flex-none mt-4">
               <p class="text-indigo text-sm p-2">Memo</p>
               <p class="font-medium text-sm pl-2">{{ thisPlayer.memo }}</p>
             </div>
