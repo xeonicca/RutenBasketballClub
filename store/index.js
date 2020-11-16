@@ -1,3 +1,5 @@
+import cloneDeep from 'lodash/cloneDeep'
+
 export const state = () => ({
   games: [],
   teams: [],
@@ -73,13 +75,24 @@ export const getters = {
 
   playerGroupedByName(state, {teamsGroupedById}) {
     return state.players.reduce((all, v) => {
-      all[v.name] = v
+      all[v.name] = cloneDeep(v)
       if(v.team && v.team.length) {
         all[v.name]['teamDetail'] = teamsGroupedById[v.team[0]] || {}
       } else {
         all[v.name]['teamDetail'] = {}
       }
+      return all
+    }, {})
+  },
 
+  playerGroupedById(state, {teamsGroupedById}) {
+    return state.players.reduce((all, v) => {
+      all[v.id] = cloneDeep(v)
+      if(v.team && v.team.length) {
+        all[v.id]['teamDetail'] = teamsGroupedById[v.team[0]] || {}
+      } else {
+        all[v.id]['teamDetail'] = {}
+      }
       return all
     }, {})
   }

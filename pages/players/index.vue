@@ -10,7 +10,7 @@
 
     <!-- Library -->
     <div class="flex px-2 pt-2 md:px-0 flex-wrap order-2 pb-8" id="section-library">
-      <PlayerCard v-for="p in playersWithTeam" :key="p.id" :player="p" />
+      <PlayerCard v-for="p in playerGroupedByName" :key="p.id" :player="p" />
     </div>
   </div>
 </template>
@@ -24,17 +24,9 @@ export default {
   },
   computed: {
     ...mapState(['players']),
-    ...mapGetters(['teamsGroupedById']),
-    playersWithTeam() {
-      return this.players.map(v => {
-        return {
-          ...v,
-          team: v.team?.length? this.teamsGroupedById[v.team[0]]: {}
-        }
-      })
-    }
+    ...mapGetters(['teamsGroupedById', 'playerGroupedByName']),
   },
 
-  
+
 }
 </script>
