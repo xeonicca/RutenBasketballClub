@@ -191,3 +191,17 @@
   padding-bottom: 20px;
   -webkit-overflow-scrolling: touch;
 }
+
+.prose code:before, .prose code:after {
+  content: '';
+}
+
+.prose code {
+  display: inline-block;
+  padding: 1px 2px;
+  border: 1px solid #a0aec0;
+  border-radius: 2px;
+  background-color: #f3f3f3;
+  margin-right: 4px;
+}
+
