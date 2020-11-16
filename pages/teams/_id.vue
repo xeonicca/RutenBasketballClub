@@ -51,6 +51,7 @@
     </div>
 
     <div class="flex px-2 pt-2 md:px-0 flex-wrap order-2 pb-8">
+      <PlayerCard :key="team.captain[0]" :player="playerGroupedById[team.captain[0]]" :isCaptain="true" />
       <PlayerCard v-for="p in team.players" :key="p" :player="playerGroupedById[p]" />
     </div>
   </div>
