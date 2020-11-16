@@ -1,8 +1,8 @@
 <template>
   <!-- Content -->
-  <div class="flex flex-1 flex-col md:px-6 pt-4" id="content">
+  <div class="flex-1 md:px-6 pt-4" id="content">
     <div class="px-6 md:px-0 flex items-baseline justify-between border-b-2 border-grey-light mt-2">
-      <!-- <h4 class="hidden md:inline-block text-grey-dark font-normal">Welcome</h4> -->
+      <h4 class="hidden md:inline-block text-grey-dark font-normal">Welcome</h4>
       <div>
         <div class="inline-block no-underline border-indigo pb-2 px-4 text-sm mr-2 text-indigo-darkest hover:cursor-pointer js-tab relative active font-bold" data-tab="section-stats">公告</div>
         <nuxt-link class="no-underline md:hidden inline-block border-indigo pb-2 px-4 text-sm mr-2 text-indigo-darkest hover:cursor-pointer js-tab relative" to="/teams">隊伍</nuxt-link>
