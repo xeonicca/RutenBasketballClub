@@ -1,5 +1,8 @@
 <template>
   <div class="flex flex-1 flex-col md:px-6 pt-6" id="content">
+    <div class="px-6 md:px-0 flex justify-between items-center -order-1">
+      <nuxt-link class="text-indigo text-sm" to="/teams">&lt; 隊伍列表</nuxt-link>
+    </div>
     <!-- Title -->
     <div class="md:px-0 mt-4 flex flex-wrap md:shadow-md  bg-white shadow-md md:shadow-none">
       <h1 class="p-6 w-full font-bold">Team {{ team.shortName }}</h1>
