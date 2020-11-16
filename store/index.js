@@ -23,7 +23,7 @@ export const mutations = {
 
 export const actions = {
   async nuxtServerInit ({dispatch, commit}, {req}) {
-    console.log('nuxtServerInit called')
+    // console.log('nuxtServerInit called')
     return Promise.all([
       dispatch('fetchGames', {
         sort: [{
@@ -31,7 +31,12 @@ export const actions = {
           direction: 'desc'
         }]
       }),
-      dispatch('fetchTeams'),
+      dispatch('fetchTeams', {
+        sort: [{
+          field: 'Name',
+          direction: 'asc'
+        }]
+      }),
       dispatch('fetchPlayers')
     ])
   },
@@ -76,7 +81,9 @@ export const getters = {
   playerGroupedByName(state, {teamsGroupedById}) {
     return state.players.reduce((all, v) => {
       all[v.name] = cloneDeep(v)
-      if(v.team && v.team.length) {
+      if(v.teams && v.teams.length) {
+        all[v.name]['teamDetail'] = teamsGroupedById[v.teams[0]] || {}
+      } else if(v.team && v.team.length) {
         all[v.name]['teamDetail'] = teamsGroupedById[v.team[0]] || {}
       } else {
         all[v.name]['teamDetail'] = {}
@@ -88,7 +95,9 @@ export const getters = {
   playerGroupedById(state, {teamsGroupedById}) {
     return state.players.reduce((all, v) => {
       all[v.id] = cloneDeep(v)
-      if(v.team && v.team.length) {
+      if(v.teams && v.teams.length) {
+        all[v.id]['teamDetail'] = teamsGroupedById[v.teams[0]] || {}
+      } else if(v.team && v.team.length) {
         all[v.id]['teamDetail'] = teamsGroupedById[v.team[0]] || {}
       } else {
         all[v.id]['teamDetail'] = {}

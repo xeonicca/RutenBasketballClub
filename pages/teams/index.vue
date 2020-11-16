@@ -10,17 +10,17 @@
 
     <!-- Library -->
     <div class="hidden px-2 pt-2 md:px-0 flex-wrap order-2 pb-8 js-tab-pane active">
-      <TeamCard v-for="team in teamsGroupedById" :key="team.id" :team="team" />
+      <TeamCard v-for="team in teams" :key="team.id" :team="team" />
     </div>
   </div>
 </template>
 <script>
-import {mapGetters} from 'vuex'
+import {mapState} from 'vuex'
 export default {
   computed: {
-    ...mapGetters(['teamsGroupedById']),
+    ...mapState(['teams']),
     teamAmount() {
-      return Object.keys(this.teamsGroupedById).length
+      return this.teams.length
     }
   }
 }

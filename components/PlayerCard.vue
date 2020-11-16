@@ -17,7 +17,10 @@ const generator = new AvatarGenerator();
 export default {
   props: {
     player: Object,
-    isCaptain: Boolean
+    isCaptain: {
+      type: Boolean,
+      default: false
+    }
   },
   computed: {
     tagText() {
