@@ -3,7 +3,8 @@ import cloneDeep from 'lodash/cloneDeep'
 export const state = () => ({
   games: [],
   teams: [],
-  players: []
+  players: [],
+  drafts: []
 })
 
 export const mutations = {
@@ -17,7 +18,11 @@ export const mutations = {
 
   setPlayers (state, players) {
     state.players = players
-  }
+  },
+
+  setDrafts (state, drafts) {
+    state.drafts = drafts
+  },
 }
 
 
@@ -37,7 +42,16 @@ export const actions = {
           direction: 'asc'
         }]
       }),
-      dispatch('fetchPlayers')
+      dispatch('fetchPlayers'),
+      dispatch('fetchDrafts', {
+        sort: [{
+          field: 'Round',
+          direction: 'asc'
+        },{
+          field: 'Pick',
+          direction: 'asc'
+        }]
+      })
     ])
   },
 
@@ -54,9 +68,15 @@ export const actions = {
   },
 
   async fetchPlayers ({commit}) {
-    let players = await this.$api.players.index(null, "Draft Pool")
+    let players = await this.$api.players.index()
     commit('setPlayers', players)
     return players
+  },
+
+  async fetchDrafts ({commit}) {
+    let drafts = await this.$api.drafts.index()
+    commit('setDrafts', drafts)
+    return drafts
   }
 }
 
@@ -102,6 +122,13 @@ export const getters = {
       } else {
         all[v.id]['teamDetail'] = {}
       }
+      return all
+    }, {})
+  },
+
+  draftsGroupedByPlayerId(state) {
+    return state.drafts.reduce((all, v) => {
+      all[v.player[0]] = cloneDeep(v)
       return all
     }, {})
   }

@@ -49,7 +49,7 @@
               <template v-if="thisPlayer.draftPool === 'yes'">
                 <p class="text-indigo text-sm p-2">Draft Status</p>
                 <div class="font-medium text-sm pl-2">
-                  1st Round 1st Pick
+                  {{ thisPlayerDraft.round | ordinal }} Round {{ thisPlayerDraft.pick | ordinal }} Pick
                 </div>
               </template>
               <template v-else>
@@ -76,14 +76,21 @@ import {mapGetters} from 'vuex'
 
 const generator = new AvatarGenerator();
 export default {
-  props: {
-    player: Object
-  },
-
   computed: {
-    ...mapGetters(['playerGroupedByName', 'teamsGroupedById']),
+    ...mapGetters(['playerGroupedByName', 'teamsGroupedById', 'draftsGroupedByPlayerId']),
     thisPlayer() {
       return this.playerGroupedByName[this.$route.params.name]
+    },
+
+    thisPlayerDraft() {
+      return this.thisPlayer? this.draftsGroupedByPlayerId[this.thisPlayer.id] : {}
+    }
+  },
+  filters: {
+    ordinal(n) {
+      var s = ["th", "st", "nd", "rd"],
+      v = n % 100;
+      return n + (s[(v - 20) % 10] || s[v] || s[0]);
     }
   },
   methods: {
