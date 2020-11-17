@@ -11,14 +11,14 @@
         </thead>
         <tbody class="p-2 leading-loose text-sm">
           <tr class="border-b">
-            <td class="py-2 font-medium"><nuxt-link class="text-black" :to="`teams/${game.firstTeam.id}`">{{ game.firstTeam.name }}</nuxt-link></td>
+            <td class="py-2 font-medium"><nuxt-link class="font-bold text-lg text-black" :to="`/teams/${game.firstTeam.id}`">{{ game.firstTeam.name }}</nuxt-link></td>
             <td class="py-2 text-right font-medium text-lg">
               <img v-if="game.firstTeam.id === game.winnerTeam.id" src="/images/iconmonstr-badge-1.svg" alt="win-icon" class="pl-2 align-middle inline-block" style="width: 24px">
               <span class="align-middle font-bold title text-xl">{{ game.firstTeamScore }}</span>
             </td>
           </tr>
           <tr class="border-b">
-            <td class="py-2 font-medium"><nuxt-link class="text-black" :to="`teams/${game.secondTeam.id}`">{{ game.secondTeam.name }}</nuxt-link></td>
+            <td class="py-2 font-medium"><nuxt-link class="font-bold text-lg text-black" :to="`/teams/${game.secondTeam.id}`">{{ game.secondTeam.name }}</nuxt-link></td>
             <td class="py-2 text-right font-medium text-lg">
               <img v-if="game.secondTeam.id === game.winnerTeam.id" src="/images/iconmonstr-badge-1.svg" alt="win-icon" class="pl-2 align-middle inline-block" style="width: 24px">
               <span class="align-middle font-bold title text-xl">{{ game.secondTeamScore }}</span>
@@ -31,7 +31,7 @@
       <div class="flex flex-wrap">
         <div class="flex-none w-full px-6 p-2 sm:p-6 lg:w-1/3">
           <p class="text-indigo text-sm">Memo</p>
-          <p class="font-medium text-sm leading-normal pt-4">{{ game.memo }}</p>
+          <p class="font-medium leading-normal pt-4">{{ game.memo }}</p>
         </div>
         <div class="flex-none w-full p-8 lg:w-2/3">
           <!-- <p class="text-indigo text-sm p-2">影片連結</p> -->
