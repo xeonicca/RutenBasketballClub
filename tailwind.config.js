@@ -6,12 +6,12 @@
  */
 module.exports = {
   plugins: [require("@tailwindcss/typography")],
-  purge: {
-    mode: 'all',
-    content: [
-      '~/content/*.md'
-    ]
-  },
+  // purge: {
+  //   mode: 'all',
+  //   content: [
+  //     '~/content/*.md'
+  //   ]
+  // },
   theme: {
     extend: {
       spacing: {
