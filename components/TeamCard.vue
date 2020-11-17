@@ -9,7 +9,7 @@
     </div>
     <div class="flex p-4 border-t border-gray-300 text-gray-700">
       <div class="flex-1 inline-flex items-center">
-        <p><span class="text-gray-900 font-bold">{{ team.ofPlayers }}</span> 名球員</p>
+        <p><span class="text-gray-900 font-bold">{{ team.ofPlayers + 1 }}</span> 名球員</p>
       </div>
       <div class="flex-1 inline-flex items-center">
 
