@@ -34,6 +34,9 @@ export const actions = {
         sort: [{
           field: 'Date Played',
           direction: 'desc'
+        },{
+          field: 'id',
+          direction: 'asc'
         }]
       }),
       dispatch('fetchTeams', {
