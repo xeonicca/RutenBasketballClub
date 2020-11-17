@@ -39,9 +39,7 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
-  buildModules: ['@nuxtjs/tailwindcss', ['@nuxtjs/google-analytics', {
-    id: 'UA-218392950'
-  }]],
+  buildModules: ['@nuxtjs/tailwindcss'],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
@@ -51,6 +49,7 @@ export default {
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    ['@nuxtjs/google-gtag', {id: 'G-4D6XF4S1DH'}]
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
