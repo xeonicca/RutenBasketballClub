@@ -4,7 +4,7 @@
       <h3 class="mt-2 font-bold">{{ player.name }}</h3>
     </template>
     <template #img>
-      <nuxt-link class="w-1/2 sm:w-full relative pb-11/12" :to="`/players/${player.name}`">
+      <nuxt-link class="block w-1/2 sm:w-full relative pb-11/12" :to="`/players/${player.name}`">
         <img class="absolute h-full w-full object-cover hover:brighter hover:translate-y-1 transition-transform" :src="player.image && player.image[0].url || getAvatar(player.id)" :alt="player.name">
       </nuxt-link>
     </template>
