@@ -18,3 +18,7 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+## Template inspiration
+- [Libre](https://tympanus.net/codrops/2018/09/16/freebie-libre-web-app-template/)
+- [Vuesax](https://vuesax.com/)
