@@ -1,11 +1,11 @@
 <template>
 <nuxt-link class="max-w-sm w-full sm:w-1/2 lg:w-1/3 py-6 px-3 block" :to="`/teams/${team.id}`">
   <div class="bg-white shadow-xl rounded-lg overflow-hidden">
-    <div class="bg-cover bg-center h-56 p-4" style="background-image: url(https://images.unsplash.com/photo-1475855581690-80accde3ae2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80)">
+    <div class="bg-contain bg-no-repeat bg-center h-56 p-4" :style="`background-image: url(${team.image && team.image[0].url || 'https://picsum.photos/500/400/?blur' })`">
     </div>
     <div class="p-4">
       <p class="uppercase tracking-wide text-sm font-bold text-indigo mb-1">{{ team.name }}</p>
-      <p class="mt-4 font-bold text-3xl text-gray-900">{{ team.shortName }}</p>
+      <p class="mt-1 font-bold text-3xl text-gray-900">{{ team.shortName }}</p>
     </div>
     <div class="flex p-4 border-t border-gray-300 text-gray-700">
       <div class="flex-1 inline-flex items-center">

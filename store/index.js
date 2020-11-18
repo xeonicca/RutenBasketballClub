@@ -101,6 +101,15 @@ export const getters = {
     }, {})
   },
 
+  teamsStanding(state) {
+    let teams = cloneDeep(state.teams)
+    teams.sort((a, b) => {
+      return b.wonGamesCount - a.wonGamesCount
+    })
+
+    return teams.map(v => v.id)
+  },
+
   playerGroupedByName(state, {teamsGroupedById}) {
     return state.players.reduce((all, v) => {
       all[v.name] = cloneDeep(v)
