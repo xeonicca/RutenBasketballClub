@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-1 flex-col md:px-6 pt-4" id="content">
+  <div class="flex flex-1 flex-col md:px-6 pt-10" id="content">
     <div class="px-6 md:px-0 flex justify-between items-center -order-1">
       <nuxt-link class="text-indigo text-sm" to="/players">&lt; 球員列表</nuxt-link>
     </div>
@@ -27,7 +27,7 @@
           </div>
           <div class="flex flex-wrap w-full sm:flex-1 sm:pl-8 mt-8 sm:mt-0">
             <div class="w-full pl-2 mb-0 sm:mb-4">
-              <nuxt-link :to="`/teams/${thisPlayer.teamDetail.id}`" v-if="thisPlayer.draftPool === 'yes'" class="inline-block font-bold text-xl text-indigo mb-1">{{ thisPlayer.teamDetail.name || '未分隊' }}</nuxt-link>
+              <nuxt-link :to="`/teams/${thisPlayer.teamDetail.id}`" v-if="thisPlayer.draftPool === 'yes'" class="inline-block font-bold text-xl text-indigo mb-1">{{ thisPlayer.teamDetail.shortName || '未分隊' }}</nuxt-link>
               <p v-else class="font-bold text-xl text-grey-darker mb-1">自由球員</p>
               <h1 class="font-bold text-4xl">{{ thisPlayer.name }}</h1>
             </div>
