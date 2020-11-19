@@ -11,14 +11,14 @@
         </thead>
         <tbody class="p-2 leading-loose text-sm">
           <tr class="border-b">
-            <td class="py-2 font-medium"><nuxt-link class="font-bold text-lg text-black" :to="`/teams/${game.firstTeam.id}`">{{ game.firstTeam.name }}</nuxt-link></td>
+            <td class="py-2 font-medium"><nuxt-link class="font-bold text-lg text-black" :to="`/teams/${game.firstTeam.id}`">{{ game.firstTeam.shortName }}</nuxt-link></td>
             <td class="py-2 text-right font-medium text-lg">
               <img v-if="game.firstTeam.id === game.winnerTeam.id" src="/images/iconmonstr-badge-1.svg" alt="win-icon" class="pl-2 align-middle inline-block" style="width: 24px">
               <span class="align-middle font-bold title text-xl">{{ game.firstTeamScore }}</span>
             </td>
           </tr>
           <tr class="border-b">
-            <td class="py-2 font-medium"><nuxt-link class="font-bold text-lg text-black" :to="`/teams/${game.secondTeam.id}`">{{ game.secondTeam.name }}</nuxt-link></td>
+            <td class="py-2 font-medium"><nuxt-link class="font-bold text-lg text-black" :to="`/teams/${game.secondTeam.id}`">{{ game.secondTeam.shortName }}</nuxt-link></td>
             <td class="py-2 text-right font-medium text-lg">
               <img v-if="game.secondTeam.id === game.winnerTeam.id" src="/images/iconmonstr-badge-1.svg" alt="win-icon" class="pl-2 align-middle inline-block" style="width: 24px">
               <span class="align-middle font-bold title text-xl">{{ game.secondTeamScore }}</span>

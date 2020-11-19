@@ -48,11 +48,15 @@
             <div class="w-full sm:w-1/2 mt-4">
               <template v-if="thisPlayer.draftPool === 'yes'">
                 <p class="text-indigo text-sm p-2">Draft Status</p>
-                <div class="font-medium text-sm pl-2">
+                <div v-if="thisPlayer.teams.length" class="font-medium text-sm pl-2">
+                  GM
+                </div>
+                <div v-else class="font-medium text-sm pl-2">
                   {{ thisPlayerDraft.round | ordinal }} Round {{ thisPlayerDraft.pick | ordinal }} Pick
                 </div>
               </template>
               <template v-else>
+                <p class="text-indigo text-sm p-2">Draft Status</p>
                 <div class="font-medium text-sm pl-2">
                   自由球員
                 </div>
