@@ -7,7 +7,7 @@
 
       <div class="hidden absolute pin-b z-10 lg:relative lg:block w-full lg:w-1/5 bg-grey-lighter-2 px-6 pt-10" id="profile">
         <div class="flex items-center mb-6">
-          <img src="/images/basketball.svg" alt="Avatar" width="75">
+          <img src="/images/basketball.png" alt="Avatar" width="75">
           <div class="ml-3">
             <p class="title">Ruten Basketball Club</p>
             <p class="text-grey-dark mt-1 text-sm">Since 2019</p>
