@@ -10,7 +10,7 @@
     "deploy": "yarn surge ./dist ruten-basketball.surge.sh"
   },
   "dependencies": {
-    "@nuxt/content": "^1.10.0",
+    "@nuxt/content": "^1.11.0",
     "@nuxtjs/axios": "^5.12.2",
     "@nuxtjs/google-gtag": "^1.0.4",
     "@nuxtjs/pwa": "^3.0.2",
