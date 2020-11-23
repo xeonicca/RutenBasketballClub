@@ -27,7 +27,7 @@
         </thead>
         <tbody class="p-2">
           <tr v-for="(tr, i) in teamMatchups" class="border-b">
-            <td class="leading-none py-2">
+            <td class="py-2 font-medium">
               <vs-button class="inline-block"
                 circle
                 icon

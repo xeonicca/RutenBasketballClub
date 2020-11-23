@@ -15,7 +15,7 @@
 - Call your own fouls
 
 ## 3. 時間
-- 每場時間 **8**分鐘
+- 每場時間 **7~8**分鐘
 
 ## 4. 每周賽事組合
 
@@ -31,3 +31,5 @@
 | GAME 8   | Team 3 vs Team 1 |
 | GAME 9   | Team 4 vs Team 5 |
 | GAME 10  | Team 1 vs Team 2 |
+
+## 5. Have Fun!
