@@ -5,7 +5,7 @@
     </div>
     <!-- Title -->
     <div class="py-6 mt-4 flex flex-wrap md:shadow-md bg-white shadow-md md:shadow-none">
-      <h2 class="px-6 py-2 w-full text-indigo font-bold">Team {{ team.name }}</h2>
+      <h2 class="px-6 py-2 w-full text-indigo font-bold">{{ team.name }}</h2>
       <h1 class="px-6 p w-full font-bold">{{ team.shortName }}</h1>
       <div class="w-full md:w-1/3 relative p-8">
         <img class="w-full object-fit" :src="team.image && team.image[0].url || 'https://picsum.photos/650/400/?blur'" :alt="team.shortName">

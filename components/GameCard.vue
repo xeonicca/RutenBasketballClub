@@ -1,5 +1,5 @@
 <template>
-  <div class="px-6 md:px-0 mt-4 flex flex-wrap order-1 md:-order-1 md:shadow-md" id="section-stats">
+  <div class="px-6 md:px-0 mt-4 flex md:shadow-md">
     <div class="p-8 px-6 w-full md:w-1/4 bg-white shadow-none">
       <h4 class="font-bold text-grey-darker">Game {{index+1}}</h4>
       <table class="mt-4 w-full">
@@ -42,7 +42,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </template>
