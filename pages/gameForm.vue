@@ -15,9 +15,10 @@
         </label>
       </div>
     </div>
+    <div><vs-button class="ml-0 w-full sm:w-auto" primary @click="clearAll">Clear</vs-button></div>
   </div>
   <div class="w-full md:w-1/2 px-4 -order-1">
-    <div class="p-6 bg-white">
+    <div class="p-6 bg-white" ref="captureArea">
       <table class="table-auto w-full">
         <thead class="p-2 text-sm leading-loose border-b text-indigo">
           <tr>
@@ -47,11 +48,17 @@
         </tbody>
       </table>
     </div>
+    <div><vs-button class="ml-0 w-full sm:w-auto" primary @click="capture">Screenshot</vs-button></div>
   </div>
+
+  <vs-dialog auto-width not-padding v-model="active">
+    <div id="matchupImage"></div>
+  </vs-dialog>
 </div>
 </template>
 
 <script>
+import html2canvas from 'html2canvas'
 import {mapState} from 'vuex'
 export default {
   data() {
@@ -69,7 +76,8 @@ export default {
         [1,2]
       ],
 
-      selected: new Array(5)
+      selected: new Array(5),
+      active: false
     }
   },
 
@@ -101,6 +109,17 @@ export default {
           this.selected[i] = null
         }
       })
+    },
+
+    capture() {
+      this.active = true
+      html2canvas(this.$refs.captureArea).then(function(canvas) {
+        document.getElementById('matchupImage').appendChild(canvas);
+      });
+    },
+
+    clearAll() {
+      this.selected = new Array(5)
     }
   }
 }
