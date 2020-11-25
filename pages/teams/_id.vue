@@ -29,6 +29,21 @@
             </tr>
           </tbody>
         </table>
+
+        <table class="mt-8 w-full">
+          <thead class="p-2 text-sm leading-loose border-b text-indigo">
+            <tr>
+              <td>對戰概況</td>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody class="p-2 leading-loose text-sm">
+            <tr class="border-b" v-for="against in matchupAgainst">
+              <td class="py-2">{{ against.team.shortName }}</td>
+              <td class="py-2 text-right"><span class="text-gray-900 font-bold">{{ against.wins }}</span>勝 <span class="text-gray-900 font-bold">{{ against.loses }}</span>敗 <span class="text-gray-900 font-bold">{{ against.draws }}</span>平手</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <div class="w-full md:w-1/3 p-4 md:pt-12 md:pl-1 mt-4 md:mt-0 lg:pt-8 lg:pl-8 rounded md:rounded-r-none bg-white shadow-md md:shadow-none">
         <div class="flex flex-wrap">
@@ -51,7 +66,7 @@
   </div>
 </template>
 <script>
-import {mapGetters} from 'vuex'
+import {mapGetters, mapState} from 'vuex'
 
 import PlayerCard from '~/components/PlayerCard'
 
@@ -60,6 +75,7 @@ export default {
     PlayerCard
   },
   computed: {
+    ...mapState(['games']),
     ...mapGetters(['teamsGroupedById', 'playerGroupedById', 'teamsStanding']),
     team() {
       return this.teamsGroupedById[this.$route.params.id]
@@ -67,6 +83,36 @@ export default {
 
     standing() {
       return this.teamsStanding.indexOf(this.team.id) + 1
+    },
+
+    matchupAgainst() {
+      let id = this.$route.params.id
+      return this.games.reduce((all, v) => {
+        let opponentId
+        if(v.firstTeam.length && v.firstTeam[0] === id) {
+          opponentId = v.secondTeam[0]
+        } else if(v.secondTeam.length && v.secondTeam[0] === id) {
+          opponentId = v.firstTeam[0]
+        }
+
+        if(!opponentId) return all
+
+        if(!all[opponentId]) {
+          all[opponentId] = {wins: 0, loses: 0, draws: 0, team: this.teamsGroupedById[opponentId]}
+        }
+
+        if(v.winnerTeam) {
+          if(v.winnerTeam[0] === id) {
+            all[opponentId].wins += 1
+          } else {
+            all[opponentId].loses += 1
+          }
+        } else {
+          all[opponentId].draws += 1
+        }
+
+        return all
+      }, {})
     }
   },
   filters: {
