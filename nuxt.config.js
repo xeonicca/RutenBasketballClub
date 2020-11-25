@@ -1,3 +1,5 @@
+const isDev = process.env.NODE_ENV !== 'production'
+
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -49,7 +51,10 @@ export default {
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
-    ['@nuxtjs/google-gtag', {id: 'G-4D6XF4S1DH'}]
+    ['@nuxtjs/google-gtag', {
+      id: 'G-4D6XF4S1DH',
+      debug: isDev
+    }]
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)

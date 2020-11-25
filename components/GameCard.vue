@@ -1,5 +1,5 @@
 <template>
-  <div class="px-6 md:px-0 mt-4 flex md:shadow-md">
+  <div class="px-6 md:px-0 mt-4 flex flex-wrap md:shadow-md">
     <div class="p-8 px-6 w-full md:w-1/4 bg-white shadow-none">
       <h4 class="font-bold text-grey-darker">Game {{index+1}}</h4>
       <table class="mt-4 w-full">
@@ -27,7 +27,7 @@
         </tbody>
       </table>
     </div>
-    <div class="w-full md:w-3/4 pt-0 md:pt-12 sm:pl-1 mt-0 lg:pl-2 bg-white shadow-none">
+    <div class="w-full flex-none md:w-3/4 pt-0 md:pt-12 sm:pl-1 mt-0 lg:pl-2 bg-white shadow-none">
       <div class="flex flex-wrap">
         <div class="flex-none w-full px-6 p-2 sm:p-6 lg:w-1/3">
           <p class="text-indigo text-sm">Memo</p>
