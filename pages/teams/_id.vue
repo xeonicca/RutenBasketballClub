@@ -1,16 +1,16 @@
 <template>
-  <div class="flex flex-1 flex-col md:px-6 pt-10" id="content">
+  <div class="flex-1 md:px-6 pt-10" id="content">
     <div class="px-6 md:px-0 flex justify-between items-center -order-1">
       <nuxt-link class="text-indigo text-sm" to="/teams">&lt; 隊伍列表</nuxt-link>
     </div>
     <!-- Title -->
     <div class="py-6 mt-4 flex flex-wrap md:shadow-md bg-white shadow-md md:shadow-none">
-      <h2 class="px-6 py-2 w-full text-indigo font-bold">{{ team.name }}</h2>
-      <h1 class="px-6 p w-full font-bold">{{ team.shortName }}</h1>
-      <div class="w-full md:w-1/3 relative p-8">
+      <h2 class="flex-none px-6 py-2 w-full text-indigo font-bold">{{ team.name }}</h2>
+      <h1 class="flex-none px-6 p w-full font-bold">{{ team.shortName }}</h1>
+      <div class="flex-none w-full md:w-1/3 relative p-8">
         <img class="w-full object-fit" :src="team.image && team.image[0].url || 'https://picsum.photos/650/400/?blur'" :alt="team.shortName">
       </div>
-      <div class="p-4 px-6 w-full md:w-1/3 rounded md:rounded-r-none">
+      <div class="flex-none p-4 px-6 w-full md:w-1/3 rounded md:rounded-r-none">
         <table class="mt-4 w-full">
           <thead class="p-2 text-sm leading-loose border-b text-indigo">
             <tr>
@@ -45,7 +45,7 @@
           </tbody>
         </table>
       </div>
-      <div class="w-full md:w-1/3 p-4 md:pt-12 md:pl-1 mt-4 md:mt-0 lg:pt-8 lg:pl-8 rounded md:rounded-r-none bg-white shadow-md md:shadow-none">
+      <div class="flex-none w-full md:w-1/3 p-4 md:pt-12 md:pl-1 mt-4 md:mt-0 lg:pt-8 lg:pl-8 rounded md:rounded-r-none bg-white">
         <div class="flex flex-wrap">
           <div class="w-1/2 md:w-full">
             <p class="text-indigo text-sm p-2">勝率</p>
@@ -59,7 +59,7 @@
       </div>
     </div>
 
-    <div class="flex px-2 pt-2 md:px-0 flex-wrap order-2 pb-8">
+    <div class="flex px-2 pt-6 md:px-0 flex-wrap order-2 pb-8">
       <PlayerCard :key="team.captain[0]" :player="playerGroupedById[team.captain[0]]" :isCaptain="true" />
       <PlayerCard v-for="p in team.players" :key="p" :player="playerGroupedById[p]" />
     </div>
