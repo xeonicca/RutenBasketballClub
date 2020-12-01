@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@nuxt/content": "^1.11.1",
-    "@nuxtjs/axios": "^5.12.2",
+    "@nuxtjs/axios": "^5.12.3",
     "@nuxtjs/google-gtag": "^1.0.4",
     "@nuxtjs/pwa": "^3.3.2",
     "@tailwindcss/typography": "^0.3.1",
