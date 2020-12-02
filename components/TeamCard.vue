@@ -1,7 +1,7 @@
 <template>
 <nuxt-link class="max-w-sm w-full sm:w-1/2 lg:w-1/5 py-6 px-3 block" :to="`/teams/${team.id}`">
   <div class="bg-white shadow-xl rounded-lg overflow-hidden">
-    <div class="bg-contain bg-no-repeat bg-center h-56 p-4" :style="`background-image: url(${team.image && team.image[0].url || 'https://picsum.photos/400/400/?blur' })`">
+    <div class="bg-cover bg-no-repeat bg-center h-56 p-4" :style="`background-image: url(${team.image && team.image[0].url || 'https://picsum.photos/400/400/?blur' })`">
     </div>
     <div class="p-4">
       <p class="uppercase tracking-wide text-sm font-bold text-indigo mb-1">{{ team.name }}</p>
