@@ -15,7 +15,7 @@
         </label>
       </div>
     </div>
-    <div><vs-button class="ml-0 w-full sm:w-auto" primary @click="clearAll">Clear</vs-button></div>
+    <div class="mt-4"><vs-button class="ml-0 w-full sm:w-auto" primary @click="clearAll">Clear</vs-button></div>
   </div>
   <div class="w-full md:w-1/2 px-4 -order-1">
     <div class="p-6 bg-white" ref="captureArea">
@@ -48,7 +48,7 @@
         </tbody>
       </table>
     </div>
-    <div><vs-button class="ml-0 w-full sm:w-auto" primary @click="capture">Screenshot</vs-button></div>
+    <div class="mt-4"><vs-button class="ml-0 w-full sm:w-auto" primary @click="capture">Screenshot</vs-button></div>
   </div>
 
   <vs-dialog auto-width not-padding v-model="active">

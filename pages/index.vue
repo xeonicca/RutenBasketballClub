@@ -20,6 +20,12 @@
     <section>
       <div class="p-8 sm:p-12 m-4 sm:mx-0 md:shadow-md lh-2 bg-white">
         <div class="flex flex-row sm:flex-col items-center sm:items-start w-full">
+          <nuxt-content class="prose prose-sm" :document="transaction" />
+        </div>
+      </div>
+
+      <div class="p-8 sm:p-12 m-4 sm:mx-0 md:shadow-md lh-2 bg-white">
+        <div class="flex flex-row sm:flex-col items-center sm:items-start w-full">
           <nuxt-content class="prose prose-sm" :document="rules" />
         </div>
       </div>
@@ -43,11 +49,13 @@ export default {
     const announcement = await $content('hello').fetch()
     const rules = await $content('rules').fetch()
     const draft = await $content('draft').fetch()
+    const transaction = await $content('transaction').fetch()
 
     return {
       announcement,
       rules,
-      draft
+      draft,
+      transaction
     }
   }
 }
