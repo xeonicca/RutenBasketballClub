@@ -1,8 +1,7 @@
 import camelCase from 'lodash/camelCase'
 
 export default axios => (resource) => ({
-
-  index(options = null, view = 'Grid view') {
+  fetch(options = null, view = 'Grid view') {
     return axios.get(resource, {
       params: options
     }).then(({data}) => {
@@ -21,4 +20,21 @@ export default axios => (resource) => ({
       })
     })
   }
-})
+
+  read(id) {
+    return axios.get(resource + '/' + id).then(({data}) => {
+      if(!data) return null
+      // console.dir(records)
+      let result = Object.keys(fields).reduce((all, v) => {
+        all[camelCase(v)] = fields[v]
+        return all
+      }, {})
+      result.id = data.id
+      return result
+    })
+  }
+
+  search(options) {
+    return this.fetch(options)
+  }
+ })
