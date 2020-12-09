@@ -8,6 +8,7 @@ export default class Team {
     }
     this.store = store
     this.rawData = rawData
+    this.imageUrl = this.getImageUrl()
   }
 
   async getPlayers() {
@@ -24,6 +25,13 @@ export default class Team {
       return await this.store.dispatch('Player/read', this.captain[0])
     }
     return null
+  }
+
+  getImageUrl() {
+    if(this.image && this.image.length) {
+      return this.image[0].url
+    }
+    return 'https://picsum.photos/650/400/?blur&id=' + this.id;
   }
 
   toJSON() {

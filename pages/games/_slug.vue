@@ -10,7 +10,7 @@
     </div>
 
     <section v-if="thisGames">
-      <GameCard v-for="game, i in thisGames" :key="game.id" :game="game" :index="i" />
+      <GameCard v-for="game, i in thisGames" :key="game.id" :gameObject="game" :index="i" />
     </section>
   </div>
 </template>
