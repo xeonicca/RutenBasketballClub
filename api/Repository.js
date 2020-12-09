@@ -19,22 +19,22 @@ export default axios => (resource) => ({
         }
       })
     })
-  }
+  },
 
   read(id) {
     return axios.get(resource + '/' + id).then(({data}) => {
       if(!data) return null
-      // console.dir(records)
-      let result = Object.keys(fields).reduce((all, v) => {
-        all[camelCase(v)] = fields[v]
+
+      let result = Object.keys(data.fields).reduce((all, v) => {
+        all[camelCase(v)] = data.fields[v]
         return all
       }, {})
       result.id = data.id
       return result
     })
-  }
+  },
 
   search(options) {
     return this.fetch(options)
   }
- })
+})

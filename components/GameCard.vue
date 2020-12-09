@@ -11,16 +11,16 @@
         </thead>
         <tbody class="p-2 leading-loose text-sm">
           <tr class="border-b">
-            <td class="py-2 font-medium"><nuxt-link class="font-bold text-lg text-black" :to="`/teams/${game.firstTeam.id}`">{{ game.firstTeam.shortName }}</nuxt-link></td>
+            <td class="py-2 font-medium"><nuxt-link class="font-bold text-lg text-black" :to="`/teams/${firstTeam.id}`">{{ firstTeam.shortName }}</nuxt-link></td>
             <td class="py-2 text-right font-medium text-lg">
-              <img v-if="game.firstTeam.id === game.winnerTeam.id" src="/images/iconmonstr-badge-1.svg" alt="win-icon" class="pl-2 align-middle inline-block" style="width: 24px">
+              <img v-if="firstTeam.id === winningTeam.id" src="/images/iconmonstr-badge-1.svg" alt="win-icon" class="pl-2 align-middle inline-block" style="width: 24px">
               <span class="align-middle font-bold title text-xl">{{ game.firstTeamScore }}</span>
             </td>
           </tr>
           <tr class="border-b">
-            <td class="py-2 font-medium"><nuxt-link class="font-bold text-lg text-black" :to="`/teams/${game.secondTeam.id}`">{{ game.secondTeam.shortName }}</nuxt-link></td>
+            <td class="py-2 font-medium"><nuxt-link class="font-bold text-lg text-black" :to="`/teams/${secondTeam.id}`">{{ secondTeam.shortName }}</nuxt-link></td>
             <td class="py-2 text-right font-medium text-lg">
-              <img v-if="game.secondTeam.id === game.winnerTeam.id" src="/images/iconmonstr-badge-1.svg" alt="win-icon" class="pl-2 align-middle inline-block" style="width: 24px">
+              <img v-if="secondTeam.id === winningTeam.id" src="/images/iconmonstr-badge-1.svg" alt="win-icon" class="pl-2 align-middle inline-block" style="width: 24px">
               <span class="align-middle font-bold title text-xl">{{ game.secondTeamScore }}</span>
             </td>
           </tr>
@@ -47,11 +47,24 @@
 </template>
 
 <script>
-
+import Game from '~/storeModels/Game'
 export default {
   props: {
     game: Object,
     index: Number
+  },
+  data() {
+    return {
+      gameObject: this.$createModel('Game', this.game),
+      firstTeam: {},
+      secondTeam: {},
+      winningTeam: {},
+    }
+  },
+  async created() {
+    this.firstTeam = await this.gameObject.getFirstTeam()
+    this.secondTeam = await this.gameObject.getSecondTeam()
+    this.winningTeam = await this.gameObject.getWinningTeam()
   }
 }
 </script>

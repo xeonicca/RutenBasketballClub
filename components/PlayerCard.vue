@@ -4,7 +4,7 @@
       <h3 class="mt-2 font-bold">{{ player.name }}</h3>
     </template>
     <template #img>
-      <nuxt-link class="block w-1/2 sm:w-full relative pb-11/12" :to="`/players/${player.name}`">
+      <nuxt-link class="block w-1/2 sm:w-full relative pb-11/12" :to="`/players/${player.id}`">
         <img class="absolute h-full w-full object-cover hover:brighter hover:translate-y-1 transition-transform" :src="player.image && player.image[0].url || getAvatar(player.id)" :alt="player.name">
       </nuxt-link>
     </template>
@@ -29,13 +29,19 @@ export default {
       default: false
     }
   },
+  data() {
+    return {
+      playerObject: this.$createModel('Player', this.player),
+      team: {}
+    }
+  },
   computed: {
     tagText() {
       if(this.player.draftPool === 'yes') {
         if(this.isCaptain) {
           return 'GM'
         } else {
-          return 'Team ' + this.player.teamDetail.shortName
+          return 'Team ' + this.team.shortName
         }
       }
       return '未分隊'
@@ -45,6 +51,10 @@ export default {
     getAvatar(seed) {
       return generator.generateRandomAvatar(seed);
     }
+  },
+
+  async created() {
+    this.team = await this.playerObject.getTeam()
   }
 }
 </script>

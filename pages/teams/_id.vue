@@ -60,8 +60,8 @@
     </div>
 
     <div class="flex px-2 pt-6 md:px-0 flex-wrap order-2 pb-8">
-      <PlayerCard :key="team.captain[0]" :player="playerGroupedById[team.captain[0]]" :isCaptain="true" />
-      <PlayerCard v-for="p in team.players" :key="p" :player="playerGroupedById[p]" />
+      <PlayerCard :key="captain.id" :player="captain" :isCaptain="true" />
+      <PlayerCard v-for="p in players" :key="p.id" :player="p" />
     </div>
   </div>
 </template>
@@ -75,11 +75,10 @@ export default {
     PlayerCard
   },
   computed: {
-    ...mapState(['games']),
-    ...mapGetters(['teamsGroupedById', 'playerGroupedById', 'teamsStanding']),
-    team() {
-      return this.teamsGroupedById[this.$route.params.id]
-    },
+    ...mapState('Game', {
+      games: state => state.games
+    }),
+    ...mapGetters('Team', ['teamsGroupedById', 'teamsStanding']),
 
     standing() {
       return this.teamsStanding.indexOf(this.team.id) + 1
@@ -124,6 +123,21 @@ export default {
 
     percentage(n) {
       return n * 100 + '%'
+    }
+  },
+
+  async asyncData(context) {
+    let allTeams = await context.store.dispatch('Team/fetch')
+    let t = await context.store.dispatch('Team/read', context.route.params.id)
+    let team = context.$createModel('Team', t)
+    let players = await team.getPlayers()
+    let captain = await team.getCaptain()
+
+    return {
+      allTeams,
+      team,
+      players,
+      captain
     }
   }
 }

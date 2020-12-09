@@ -1,6 +1,5 @@
-/** Model definition file for the Movie Class **/
 
-import store from '../store'
+// import store from '../store'
 
 /*
 {
@@ -55,11 +54,12 @@ import store from '../store'
 }
 */
 export default class Player {
-  constructor(rawData = {}) {
-    this.id = rawData.id
-    for(let key of rawData.fields) {
+  constructor(rawData = {}, store) {
+    for(let key of Object.keys(rawData)) {
       this[key] = rawData[key]
     }
+    this.store = store
+    this.rawData = rawData
   }
 
   getImageUrl() {
@@ -67,21 +67,26 @@ export default class Player {
   }
 
   async getDraft() {
-    if(this.draftPool) {
-      return await store.dispatch('draft/read', this.drafts[0])
+    if(this.draftPool === 'no') {
+      return await this.store.dispatch('Draft/read', this.drafts[0])
     }
     return Promise.resolve('自由球員')
   }
 
   async getTeam() {
-    let teamId = this.isCaptain? this.teams[0]:this.team[0]
-    if(this.teamId) {
-      return await store.dispatch('team/read', teamId)
-    } else {
+    if(this.draftPool === 'no') {
       return Promise.resolve({
         name: '自由球員',
         shortName: '自由球員'
       })
     }
+
+    let teamId = this.isCaptain? this.teams[0]:this.team[0]
+
+    return await this.store.dispatch('Team/read', teamId)
+  }
+
+  toJSON() {
+    return this.rawData
   }
 }

@@ -4,7 +4,7 @@
     <div class="px-6 md:px-0 flex justify-between items-center -order-1">
       <div>
         <h2 class="font-normal font-bold">全部隊伍</h2>
-        <p class="text-grey-dark mt-2">{{ teamAmount }}隊</p>
+        <p class="text-grey-dark mt-2">{{ teams.length }}隊</p>
       </div>
     </div>
 
@@ -17,10 +17,10 @@
 <script>
 import {mapState} from 'vuex'
 export default {
-  computed: {
-    ...mapState(['teams']),
-    teamAmount() {
-      return this.teams.length
+  async asyncData(context) {
+    let teams = await context.store.dispatch('Team/fetch')
+    return {
+      teams
     }
   }
 }
