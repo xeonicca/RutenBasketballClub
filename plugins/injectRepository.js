@@ -10,15 +10,15 @@ const airtable = axios.create({
   }
 })
 
-airtable.interceptors.request.use(function (config) {
-  // Do something before request is sent
-  // console.dir(config)
-  // console.log(airtable.getUri(config))
-  return config;
-}, function (error) {
-  // Do something with request error
-  return Promise.reject(error);
-});
+// airtable.interceptors.request.use(function (config) {
+//   // Do something before request is sent
+//   // console.dir(config)
+//   // console.log(airtable.getUri(config))
+//   return config;
+// }, function (error) {
+//   // Do something with request error
+//   return Promise.reject(error);
+// });
 
 
 export default (ctx, inject) => {

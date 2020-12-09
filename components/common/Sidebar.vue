@@ -40,16 +40,18 @@
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
 export default {
   props: {
     ifMenuVisible: Boolean
   },
 
   computed: {
-    ...mapGetters(['gamesGroupedByDate']),
+    games() {
+      return this.$store.state.Game.games
+    },
     dateEntryList() {
-      return Object.keys(this.gamesGroupedByDate).sort((a, b) =>  a > b)
+      let games = this.$store.getters['Game/gamesGroupedByDate']
+      return Object.keys(games).sort((a, b) =>  a > b)
     }
   },
 

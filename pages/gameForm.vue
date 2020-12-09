@@ -59,7 +59,7 @@
 
 <script>
 import html2canvas from 'html2canvas'
-import {mapState} from 'vuex'
+
 export default {
   data() {
     return {
@@ -82,7 +82,6 @@ export default {
   },
 
   computed: {
-    ...mapState(['teams']),
     teamMatchups() {
       return this.matchups.map(v => {
         return [
@@ -120,6 +119,13 @@ export default {
 
     clearAll() {
       this.selected = new Array(5)
+    }
+  },
+
+  async asyncData(context) {
+    let teams = await context.store.dispatch('Team/fetch')
+    return {
+      teams
     }
   }
 }

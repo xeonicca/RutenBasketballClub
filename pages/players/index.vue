@@ -10,23 +10,28 @@
 
     <!-- Library -->
     <div class="flex px-2 pt-2 md:px-0 flex-wrap order-2 pb-8" id="section-library">
-      <PlayerCard v-for="p in playerGroupedByName" :key="p.id" :player="p" />
+      <PlayerCard v-for="p in players" :key="p.id" :player="p" />
     </div>
   </div>
 </template>
 <script>
 import PlayerCard from '~/components/PlayerCard'
-import {mapState, mapGetters} from 'vuex'
 
 export default {
   components: {
     PlayerCard
   },
-  computed: {
-    ...mapState(['players']),
-    ...mapGetters(['teamsGroupedById', 'playerGroupedByName']),
-  },
 
+  async asyncData(context) {
+    let players = await context.store.dispatch('Player/fetch')
 
+    // fetch all teams so each component dont need fetch again
+    let teams = await context.store.dispatch('Team/fetch')
+
+    return {
+      players,
+      teams
+    }
+  }
 }
 </script>
