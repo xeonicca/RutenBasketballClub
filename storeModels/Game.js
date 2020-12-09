@@ -22,10 +22,14 @@ export default class Game {
     return Promise.resolve({})
   }
 
-  async getWinningTeam() {
-    if(this.winningTeam) {
-      return await this.store.dispatch('Team/read', this.winningTeam[0])
+  async getWinnerTeam() {
+    if(this.winnerTeam) {
+      return await this.store.dispatch('Team/read', this.winnerTeam[0])
     }
     return Promise.resolve({})
+  }
+
+  toJSON() {
+    return this.rawData
   }
 }

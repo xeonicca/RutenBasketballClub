@@ -53,7 +53,7 @@ export default {
     }
   },
 
-  async created() {
+  async fetch() {
     this.captain = await this.teamObject.getCaptain() || {}
   }
 }

@@ -29,7 +29,11 @@ export const mutations = {
 }
 
 export const actions = {
-  async fetch ({commit}) {
+  async fetch ({commit, state}) {
+    if(state.teams.length) {
+      return Promise.resolve(state.teams)
+    }
+
     const newCollection = []
     let teams = await this.$api.teams.fetch({
         sort: [{
@@ -50,7 +54,7 @@ export const actions = {
     }
 
     let team = await this.$api.teams.read(id)
-    commit('addTeam', team)
+    // commit('addTeam', team)
     return team
   }
 }

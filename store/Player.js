@@ -24,7 +24,11 @@ export const mutations = {
 }
 
 export const actions = {
-  async fetch({ commit }) {
+  async fetch({ commit, state }) {
+    if(state.players.length) {
+      return Promise.resolve(state.players)
+    }
+
     const newCollection = []
     let players = await this.$api.players.fetch()
     for (const p of players) {
@@ -40,7 +44,7 @@ export const actions = {
     }
 
     let player = await this.$api.players.read(id)
-    commit('addPlayer', player)
+    // commit('addPlayer', player)
     return player
   },
 }

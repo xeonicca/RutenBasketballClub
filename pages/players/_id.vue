@@ -46,7 +46,7 @@
               </div>
             </div>
             <div class="w-full sm:w-1/2 mt-4">
-<!--               <template v-if="player.draftPool === 'yes'">
+              <template v-if="player.draftPool === 'yes'">
                 <p class="text-indigo text-sm p-2">Draft Status</p>
                 <div v-if="player.isCaptain" class="font-medium text-sm pl-2">
                   GM
@@ -60,7 +60,7 @@
                 <div class="font-medium text-sm pl-2">
                   自由球員
                 </div>
-              </template> -->
+              </template>
             </div>
             <div class="w-full sm:w-1/2 flex-none mt-4">
               <p class="text-indigo text-sm p-2">Memo</p>
@@ -79,6 +79,11 @@ import { AvatarGenerator } from 'random-avatar-generator';
 
 const generator = new AvatarGenerator();
 export default {
+  computed: {
+    playerDraft() {
+      return this.$store.getters['draftsGroupedByPlayerId'][this.$route.params.id]
+    }
+  },
   filters: {
     ordinal(n) {
       var s = ["th", "st", "nd", "rd"],
@@ -96,10 +101,12 @@ export default {
     let p = await context.store.dispatch('Player/read', context.route.params.id)
     let player = context.$createModel('Player', p)
     let team = await player.getTeam()
+    let drafts = await context.store.dispatch('fetchDrafts')
 
     return {
       player,
-      team
+      team,
+      drafts
     }
   }
 }

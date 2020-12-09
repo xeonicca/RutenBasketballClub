@@ -13,14 +13,14 @@
           <tr class="border-b">
             <td class="py-2 font-medium"><nuxt-link class="font-bold text-lg text-black" :to="`/teams/${firstTeam.id}`">{{ firstTeam.shortName }}</nuxt-link></td>
             <td class="py-2 text-right font-medium text-lg">
-              <img v-if="firstTeam.id === winningTeam.id" src="/images/iconmonstr-badge-1.svg" alt="win-icon" class="pl-2 align-middle inline-block" style="width: 24px">
+              <img v-if="firstTeam.id === winnerTeam.id" src="/images/iconmonstr-badge-1.svg" alt="win-icon" class="pl-2 align-middle inline-block" style="width: 24px">
               <span class="align-middle font-bold title text-xl">{{ game.firstTeamScore }}</span>
             </td>
           </tr>
           <tr class="border-b">
             <td class="py-2 font-medium"><nuxt-link class="font-bold text-lg text-black" :to="`/teams/${secondTeam.id}`">{{ secondTeam.shortName }}</nuxt-link></td>
             <td class="py-2 text-right font-medium text-lg">
-              <img v-if="secondTeam.id === winningTeam.id" src="/images/iconmonstr-badge-1.svg" alt="win-icon" class="pl-2 align-middle inline-block" style="width: 24px">
+              <img v-if="secondTeam.id === winnerTeam.id" src="/images/iconmonstr-badge-1.svg" alt="win-icon" class="pl-2 align-middle inline-block" style="width: 24px">
               <span class="align-middle font-bold title text-xl">{{ game.secondTeamScore }}</span>
             </td>
           </tr>
@@ -58,13 +58,13 @@ export default {
       gameObject: this.$createModel('Game', this.game),
       firstTeam: {},
       secondTeam: {},
-      winningTeam: {},
+      winnerTeam: {},
     }
   },
-  async created() {
+  async fetch() {
     this.firstTeam = await this.gameObject.getFirstTeam()
     this.secondTeam = await this.gameObject.getSecondTeam()
-    this.winningTeam = await this.gameObject.getWinningTeam()
+    this.winnerTeam = await this.gameObject.getWinnerTeam()
   }
 }
 </script>

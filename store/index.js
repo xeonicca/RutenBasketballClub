@@ -1,4 +1,5 @@
 // import Vuex from 'vuex'
+import cloneDeep from 'lodash/cloneDeep'
 
 export const state = () => ({
   drafts: []
@@ -12,7 +13,6 @@ export const mutations = {
 
 export const actions = {
   async nuxtServerInit ({state, dispatch, commit}, {req}) {
-    console.log('nuxtServerInit')
     await dispatch('Game/fetch')
   },
 
@@ -34,7 +34,11 @@ export const actions = {
 //     return players
 //   },
 
-  async fetchDrafts ({commit}) {
+  async fetchDrafts ({commit, state}) {
+    if(state.drafts.length) {
+      return Promise.resolve(state.drafts)
+    }
+
     let drafts = await this.$api.drafts.fetch()
     commit('setDrafts', drafts)
     return drafts

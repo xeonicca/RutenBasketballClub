@@ -53,7 +53,7 @@ export default {
     }
   },
 
-  async created() {
+  async fetch() {
     this.team = await this.playerObject.getTeam()
   }
 }

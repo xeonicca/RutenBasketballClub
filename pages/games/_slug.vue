@@ -28,6 +28,11 @@ export default {
     thisGames() {
       return this.allGames[this.$route.params.slug] || []
     }
+  },
+
+  async asyncData(context) {
+    // fetch all teams so each component dont need fetch again
+    let teams = await context.store.dispatch('Team/fetch')
   }
 }
 </script>

@@ -24,8 +24,13 @@ export default {
 
   async asyncData(context) {
     let players = await context.store.dispatch('Player/fetch')
+
+    // fetch all teams so each component dont need fetch again
+    let teams = await context.store.dispatch('Team/fetch')
+
     return {
-      players
+      players,
+      teams
     }
   }
 }
