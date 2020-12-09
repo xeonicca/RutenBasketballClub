@@ -8,7 +8,7 @@
       <div class="w-full p-8 md:rounded-r-none bg-white shadow-md md:shadow-none">
         <div class="flex flex-wrap">
           <div class="w-full sm:w-1/3 relative">
-            <img class="w-full object-fit" :src="player.image && player.image[0].url || getAvatar(player.id)" :alt="player.name">
+            <img class="w-full object-fit" :src="player.imageUrl" :alt="player.name">
             <div class="hidden overflow-hidden relative w-full text-center mt-4 mb-4">
               <button class="bg-blue-500 hover:bg-blue-light text-white font-bold py-2 px-4 inline-flex items-center md:w-1/2">
                 <svg fill="#FFF" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
@@ -75,9 +75,6 @@
 </template>
 
 <script>
-import { AvatarGenerator } from 'random-avatar-generator';
-
-const generator = new AvatarGenerator();
 export default {
   computed: {
     playerDraft() {
@@ -89,11 +86,6 @@ export default {
       var s = ["th", "st", "nd", "rd"],
       v = n % 100;
       return n + (s[(v - 20) % 10] || s[v] || s[0]);
-    }
-  },
-  methods: {
-    getAvatar(seed) {
-      return generator.generateRandomAvatar(seed);
     }
   },
 

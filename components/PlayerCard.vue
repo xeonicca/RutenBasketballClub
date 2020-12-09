@@ -5,7 +5,7 @@
     </template>
     <template #img>
       <nuxt-link class="block w-1/2 sm:w-full relative pb-11/12" :to="`/players/${player.id}`">
-        <img class="absolute h-full w-full object-cover hover:brighter hover:translate-y-1 transition-transform" :src="player.image && player.image[0].url || getAvatar(player.id)" :alt="player.name">
+        <img class="absolute h-full w-full object-cover hover:brighter hover:translate-y-1 transition-transform" :src="player.imageUrl" :alt="player.name">
       </nuxt-link>
     </template>
     <template #text>
@@ -19,19 +19,19 @@
 </template>
 
 <script>
-import { AvatarGenerator } from 'random-avatar-generator';
-const generator = new AvatarGenerator();
+
 export default {
   props: {
-    player: Object,
+    playerObject: Object,
     isCaptain: {
       type: Boolean,
       default: false
     }
   },
   data() {
+    let player = this.$createModel('Player', this.playerObject)
     return {
-      playerObject: this.$createModel('Player', this.player),
+      player: player,
       team: {}
     }
   },
@@ -47,14 +47,9 @@ export default {
       return '未分隊'
     }
   },
-  methods: {
-    getAvatar(seed) {
-      return generator.generateRandomAvatar(seed);
-    }
-  },
 
   async fetch() {
-    this.team = await this.playerObject.getTeam()
+    this.team = await this.player.getTeam()
   }
 }
 </script>

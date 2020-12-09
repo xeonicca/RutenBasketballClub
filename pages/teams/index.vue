@@ -10,7 +10,7 @@
 
     <!-- Library -->
     <div class="hidden px-2 pt-2 md:px-0 flex-wrap order-2 pb-8 js-tab-pane active">
-      <TeamCard v-for="team in teams" :key="team.id" :team="team" />
+      <TeamCard v-for="team in teams" :key="team.id" :teamObject="team" />
     </div>
   </div>
 </template>

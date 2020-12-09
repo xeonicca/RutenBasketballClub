@@ -1,4 +1,4 @@
-import createRepository from '~/api/Repository'
+import createRepository from '@/api/Repository'
 import axios from 'axios'
 import qs from 'qs'
 

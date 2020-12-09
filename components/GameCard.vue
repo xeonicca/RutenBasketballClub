@@ -50,21 +50,21 @@
 import Game from '~/storeModels/Game'
 export default {
   props: {
-    game: Object,
+    gameObject: Object,
     index: Number
   },
   data() {
     return {
-      gameObject: this.$createModel('Game', this.game),
+      game: this.$createModel('Game', this.gameObject),
       firstTeam: {},
       secondTeam: {},
       winnerTeam: {},
     }
   },
   async fetch() {
-    this.firstTeam = await this.gameObject.getFirstTeam()
-    this.secondTeam = await this.gameObject.getSecondTeam()
-    this.winnerTeam = await this.gameObject.getWinnerTeam()
+    this.firstTeam = await this.game.getFirstTeam()
+    this.secondTeam = await this.game.getSecondTeam()
+    this.winnerTeam = await this.game.getWinnerTeam()
   }
 }
 </script>

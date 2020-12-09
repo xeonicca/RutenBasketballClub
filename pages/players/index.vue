@@ -10,7 +10,7 @@
 
     <!-- Library -->
     <div class="flex px-2 pt-2 md:px-0 flex-wrap order-2 pb-8" id="section-library">
-      <PlayerCard v-for="p in players" :key="p.id" :player="p" />
+      <PlayerCard v-for="p in players" :key="p.id" :playerObject="p" />
     </div>
   </div>
 </template>
