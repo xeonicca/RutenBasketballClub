@@ -9,7 +9,7 @@
       <!-- <a class="bg-indigo-dark no-underline hover:bg-indigo-darker text-white text-sm py-2 px-4 rounded-full transition-normal hover:shadow hover:translate-y-1 active:translate-y-1 focus:outline-none" href="https://airtable.com/shrkBQovjiTzdhqhG">新增比賽紀錄</a> -->
     </div>
 
-    <section v-if="thisGames">
+    <section v-if="thisGames.length">
       <GameCard v-for="game, i in thisGames" :key="game.id" :gameObject="game" :index="i" />
     </section>
   </div>

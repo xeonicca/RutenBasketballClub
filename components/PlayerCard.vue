@@ -5,7 +5,7 @@
     </template>
     <template #img>
       <nuxt-link class="block w-1/2 sm:w-full relative pb-11/12" :to="`/players/${player.id}`">
-        <img class="absolute h-full w-full object-cover hover:brighter hover:translate-y-1 transition-transform" :src="player.imageUrl" :alt="player.name">
+        <img class="absolute h-full w-full object-cover hover:brighter hover:translate-y-1 transition-transform" :src="imageUrl" :alt="player.name">
       </nuxt-link>
     </template>
     <template #text>
@@ -32,6 +32,7 @@ export default {
     let player = this.$createModel('Player', this.playerObject)
     return {
       player: player,
+      imageUrl: player.getImageUrl(),
       team: {}
     }
   },
@@ -50,6 +51,10 @@ export default {
 
   async fetch() {
     this.team = await this.player.getTeam()
+  },
+
+  activated() {
+    console.log('activated')
   }
 }
 </script>

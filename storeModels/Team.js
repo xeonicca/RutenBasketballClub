@@ -8,7 +8,6 @@ export default class Team {
     }
     this.store = store
     this.rawData = rawData
-    this.imageUrl = this.getImageUrl()
   }
 
   async getPlayers() {

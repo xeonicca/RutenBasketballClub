@@ -8,7 +8,7 @@
       <h2 class="flex-none px-6 py-2 w-full text-indigo font-bold">{{ team.name }}</h2>
       <h1 class="flex-none px-6 p w-full font-bold">{{ team.shortName }}</h1>
       <div class="flex-none w-full md:w-1/3 relative p-8">
-        <img class="w-full object-fit" :src="team.imageUrl" :alt="team.shortName">
+        <img class="w-full object-fit" :src="imageUrl" :alt="team.shortName">
       </div>
       <div class="flex-none p-4 px-6 w-full md:w-1/3 rounded md:rounded-r-none">
         <table class="mt-4 w-full">
@@ -122,7 +122,7 @@ export default {
     },
 
     percentage(n) {
-      return n * 100 + '%'
+      return Math.round(n * 10000)/100 + '%'
     }
   },
 
@@ -137,7 +137,8 @@ export default {
       allTeams,
       team,
       players,
-      captain
+      captain,
+      imageUrl: team.getImageUrl()
     }
   }
 }

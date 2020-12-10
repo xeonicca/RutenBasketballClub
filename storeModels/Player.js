@@ -8,9 +8,6 @@ export default class Player {
     }
     this.store = store
     this.rawData = rawData
-
-    // avatar url shortcut
-    this.imageUrl = this.getImageUrl()
   }
 
   async getDraft() {
