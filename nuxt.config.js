@@ -87,7 +87,8 @@ export default {
       short_name: 'RBC',
       description: '露天籃球社推廣網站',
       lang: 'zh-Hant-TW',
-      useWebmanifestExtension: false
+      useWebmanifestExtension: false,
+      background_color: '#2f365f'
     }
   }
 }
