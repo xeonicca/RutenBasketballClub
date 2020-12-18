@@ -42,7 +42,10 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
-  buildModules: ['@nuxtjs/tailwindcss'],
+  buildModules: [
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/pwa'
+  ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
@@ -76,5 +79,16 @@ export default {
 
   generate: {
     interval: 1000
+  },
+
+  pwa: {
+    manifest: {
+      name: 'Ruten Basketball Club',
+      short_name: 'RBC',
+      description: '露天籃球社推廣網站',
+      lang: 'zh-Hant-TW',
+      useWebmanifestExtension: false,
+      background_color: '#2f365f'
+    }
   }
 }
