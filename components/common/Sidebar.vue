@@ -13,6 +13,10 @@
         <img src="/images/iconmonstr-generation-1.svg" alt="wishlist-icon" class="w-4 h-4 mr-2">
         <nuxt-link class="text-sm hover:cursor-pointer text-indigo-darkest no-underline font-bold mobile-home-trigger" to="/players" activeClass="text-indigo-dark">成員</nuxt-link>
       </li>
+      <li class="ml-2 mb-4 flex">
+        <img src="/images/iconmonstr-trophy-13.svg" alt="wishlist-icon" class="w-4 h-4 mr-2">
+        <nuxt-link class="text-sm hover:cursor-pointer text-indigo-darkest no-underline font-bold mobile-home-trigger" to="/playoff" activeClass="text-indigo-dark">季後賽</nuxt-link>
+      </li>
       <li class="ml-2 mb-4">
         <div class="flex" id="sidenav-categories-trigger">
           <img src="/images/iconmonstr-basketball-2.svg" alt="home-icon" class="w-4 h-4 mr-2">
