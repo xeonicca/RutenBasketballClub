@@ -1,28 +1,53 @@
 <template>
   <div class="flex flex-1 flex-col md:px-6 pt-10" id="content">
-    <div class="winner-bracket">
-      <MatchRound class="mb-2">
-        <MatchRound slot="matchup" class="mb-2">
-          <Match slot="matchup" title="Game 1" homeName="Team 2" awayName="Team 5"></Match>
-          <Match slot="matchup" homeName="Team 1"></Match>
-          <!-- <Match slot="matchup" title="Game 2" homeName="Team 3" awayName="Team 4"></Match> -->
-          <MatchRound slot="advance" class="mb-2">
-            <!-- <Match slot="matchup" homeName="Team 1"></Match> -->
-            <Match slot="matchup" title="Game 4" homeName="Winner of G1" awayName="Team 1"></Match>
-          </MatchRound>
-          <!-- <Match slot="advance" title="Game 4" homeName="Winner of G1" awayName="Winner of G2"></Match> -->
-        </MatchRound>
-        <MatchRound slot="matchup" class="mb-2">
-          <Match slot="matchup" title="Game 2" homeName="Team 3" awayName="Team 4"></Match>
-          <Match slot="matchup"></Match>
-        </MatchRound>
-      </MatchRound>
+    <div class="px-6 md:px-0 flex justify-between items-center -order-1">
+      <div>
+        <h2 class="font-normal font-bold text-xl">第一屆露天籃球社季後賽</h2>
+      </div>
     </div>
-    <div class="loser-bracket">
-      <MatchRound>
-        <Match slot="matchup" title="Game 3" homeName="Loser of G1" awayName="Loser of G2"></Match>
-        <Match slot="advance"></Match>
-      </MatchRound>
+    <div class="item zoom">
+      <div class="item-parent">
+        <Match name="Champion"></Match>
+        <strong class="item-order">#8</strong>
+      </div>
+      <div class="pair">
+        <div class="item-childrens">
+          <div class="item-child">
+            <MatchRound order="6">
+              <Match slot="parent" name="#6 Winner"></Match>
+              <MatchRound slot="firstChild" order="2">
+                <Match slot="parent" name="#2 Winner"></Match>
+                <Match slot="firstChild" name="鬼殺隊"></Match>
+                <Match slot="secondChild" name="基紐特攻隊"></Match>
+              </MatchRound>
+              <MatchRound slot="secondChild" order="3">
+                <Match slot="parent" name="#3 Winner"></Match>
+                <Match slot="firstChild" name="山姆隊"></Match>
+                <MatchRound slot="secondChild" order="1">
+                  <Match slot="parent" name="#1 Winner"></Match>
+                  <Match slot="firstChild" name="子揚隊"></Match>
+                  <Match slot="secondChild" name="提姆隊"></Match>
+                </MatchRound>
+              </MatchRound>
+            </MatchRound>
+          </div>
+          <div class="item-child">
+            <MatchRound order="7">
+              <Match slot="parent" name="#7 Winner"></Match>
+              <MatchRound slot="firstChild" order="5">
+                <Match slot="parent" name="#5 Winner"></Match>
+                <MatchRound slot="firstChild" order="4">
+                  <Match slot="parent" name="#4 Winner"></Match>
+                  <Match slot="firstChild" name="#1 Loser"></Match>
+                  <Match slot="secondChild" name="#2 Loser"></Match>
+                </MatchRound>
+                <Match slot="secondChild" name="#3 Loser"></Match>
+              </MatchRound>
+              <Match slot="secondChild" name="#6 Loser"></Match>
+            </MatchRound>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -32,9 +57,14 @@ import Match from '~/components/Match'
 import MatchRound from '~/components/MatchRound'
 
 export default {
+  // bracket layout copied from https://codepen.io/nicholasnadel/pen/vYNOWKG
   components: {
     Match,
     MatchRound
+  },
+
+  mounted() {
+    // copied from https://codepen.io/sean_codes/pen/WdjVyM
   }
 }
 </script>

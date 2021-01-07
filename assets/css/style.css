@@ -205,3 +205,139 @@
   margin-right: 4px;
 }
 
+/*ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+li {
+  text-decoration: none;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin-right: 10px;
+}
+
+li a {
+  text-decoration: none;
+}*/
+
+.editable {
+  background-color: transparent;
+}
+
+.item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  align-self: center;
+}
+
+.item-parent {
+  position: relative;
+  margin-left: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.item-parent:after {
+  position: absolute;
+  content: '';
+  width: 25px;
+  height: 2px;
+  left: 0;
+  top: 50%;
+  background-color: #8795a1;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+
+.item-order {
+  position: absolute;
+  left: -20px;
+  top: calc(50% - 16px);
+  font-size: 10px;
+}
+
+.item-childrens {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.item-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.item-child:before {
+  content: '';
+  position: absolute;
+  background-color: #8795a1;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  width: 25px;
+  height: 2px;
+}
+
+.item-child:after {
+  content: '';
+  position: absolute;
+  background-color: #8795a1;
+  right: -25px;
+  height: calc(50% + 22px);
+  width: 2px;
+  top: 50%;
+}
+
+.item-child:last-child:after {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+.item-child:only-child:after {
+  display: none;
+}
+
+.match {
+  min-width: 120px;
+}
+
+.nuxt-progress {
+  z-index: 100;
+}

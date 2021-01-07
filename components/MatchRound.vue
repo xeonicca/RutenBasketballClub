@@ -1,11 +1,22 @@
 <template>
-  <div class="round inline-flex">
-    <div class="flex-1" ref="matchup"><slot name="matchup"></slot></div>
-    <div class="flex-1 self-center pl-4" ref="advance"><slot name="advance"></slot></div>
+  <div class="item">
+    <div class="item-parent">
+      <slot name="parent"></slot>
+      <strong class="item-order">#{{ order }}</strong>
+    </div>
+    <div class="item-childrens">
+      <div class="item-child">
+        <slot name="firstChild"></slot>
+      </div>
+      <div class="item-child">
+        <slot name="secondChild"></slot>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
+  props: { order: String }
 }
 </script>
