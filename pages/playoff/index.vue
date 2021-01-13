@@ -7,44 +7,48 @@
     </div>
     <div class="item zoom">
       <div class="item-parent">
-        <Match name="Champion"></Match>
-        <strong class="item-order">#8</strong>
+        <Match name="鬼殺隊"></Match>
+        <strong class="item-order">#9</strong>
       </div>
       <div class="pair">
         <div class="item-childrens">
           <div class="item-child">
-            <MatchRound order="6">
-              <Match slot="parent" name="#6 Winner"></Match>
-              <MatchRound slot="firstChild" order="2">
-                <Match slot="parent" name="#2 Winner"></Match>
-                <Match slot="firstChild" name="鬼殺隊"></Match>
-                <Match slot="secondChild" name="基紐特攻隊"></Match>
+            <MatchRound order="8">
+              <Match slot="parent" name="鬼殺隊"></Match>
+              <MatchRound order="6" slot="firstChild">
+                <Match slot="parent" name="山姆隊"></Match>
+                <MatchRound slot="firstChild" order="2">
+                  <Match slot="parent" name="基紐特攻隊"></Match>
+                  <Match slot="firstChild" name="鬼殺隊"></Match>
+                  <Match slot="secondChild" name="基紐特攻隊"></Match>
+                </MatchRound>
+                <MatchRound slot="secondChild" order="3">
+                  <Match slot="parent" name="山姆隊"></Match>
+                  <Match slot="firstChild" name="山姆隊"></Match>
+                  <MatchRound slot="secondChild" order="1">
+                    <Match slot="parent" name="提姆隊"></Match>
+                    <Match slot="firstChild" name="子揚隊"></Match>
+                    <Match slot="secondChild" name="提姆隊"></Match>
+                  </MatchRound>
+                </MatchRound>
               </MatchRound>
-              <MatchRound slot="secondChild" order="3">
-                <Match slot="parent" name="#3 Winner"></Match>
-                <Match slot="firstChild" name="山姆隊"></Match>
-                <MatchRound slot="secondChild" order="1">
-                  <Match slot="parent" name="#1 Winner"></Match>
-                  <Match slot="firstChild" name="子揚隊"></Match>
+              <MatchRound order="7" slot="secondChild">
+                <Match slot="parent" name="鬼殺隊"></Match>
+                <MatchRound slot="firstChild" order="5">
+                  <Match slot="parent" name="鬼殺隊"></Match>
+                  <MatchRound slot="firstChild" order="4">
+                    <Match slot="parent" name="鬼殺隊"></Match>
+                    <Match slot="firstChild" name="子揚隊"></Match>
+                    <Match slot="secondChild" name="鬼殺隊"></Match>
+                  </MatchRound>
                   <Match slot="secondChild" name="提姆隊"></Match>
                 </MatchRound>
+                <Match slot="secondChild" name="基紐特攻隊"></Match>
               </MatchRound>
             </MatchRound>
           </div>
           <div class="item-child">
-            <MatchRound order="7">
-              <Match slot="parent" name="#7 Winner"></Match>
-              <MatchRound slot="firstChild" order="5">
-                <Match slot="parent" name="#5 Winner"></Match>
-                <MatchRound slot="firstChild" order="4">
-                  <Match slot="parent" name="#4 Winner"></Match>
-                  <Match slot="firstChild" name="#1 Loser"></Match>
-                  <Match slot="secondChild" name="#2 Loser"></Match>
-                </MatchRound>
-                <Match slot="secondChild" name="#3 Loser"></Match>
-              </MatchRound>
-              <Match slot="secondChild" name="#6 Loser"></Match>
-            </MatchRound>
+            <Match name="山姆隊"></Match>
           </div>
         </div>
       </div>
@@ -61,10 +65,6 @@ export default {
   components: {
     Match,
     MatchRound
-  },
-
-  mounted() {
-    // copied from https://codepen.io/sean_codes/pen/WdjVyM
   }
 }
 </script>
