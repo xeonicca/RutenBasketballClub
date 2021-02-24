@@ -74,7 +74,7 @@ export default {
 
   env: {
     AIRTABLE_KEY: 'keyPagIg3OoIgDKz6',
-    AIRTABLE_BASE: 'appFJbbxZKkK4d1bS'
+    AIRTABLE_BASE: 'appJ7T6puTExvrt9X'
   },
 
   generate: {
