@@ -42,7 +42,7 @@ export default {
         if(this.isCaptain) {
           return 'GM'
         } else {
-          return 'Team ' + this.team.shortName
+          return this.team.shortName
         }
       }
       return '未分隊'
