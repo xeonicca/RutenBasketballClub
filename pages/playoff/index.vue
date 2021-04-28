@@ -19,16 +19,16 @@
                 <Match slot="parent" name=""></Match>
                 <MatchRound slot="firstChild" order="2">
                   <Match slot="parent" name=""></Match>
-                  <Match slot="firstChild" name="Team Ray"></Match>
-                  <Match slot="secondChild" name="魔關羽隊"></Match>
+                  <Match slot="firstChild" name="The Avengers"></Match>
+                  <Match slot="secondChild" name="Team 絲襪"></Match>
                 </MatchRound>
                 <MatchRound slot="secondChild" order="3">
                   <Match slot="parent" name=""></Match>
                   <Match slot="firstChild" name="湘北"></Match>
                   <MatchRound slot="secondChild" order="1">
                     <Match slot="parent" name=""></Match>
-                    <Match slot="firstChild" name="The Avengers"></Match>
-                    <Match slot="secondChild" name="Team 絲襪"></Match>
+                    <Match slot="firstChild" name="Team Ray"></Match>
+                    <Match slot="secondChild" name="魔關羽隊"></Match>
                   </MatchRound>
                 </MatchRound>
               </MatchRound>
