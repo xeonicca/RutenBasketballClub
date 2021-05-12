@@ -6,49 +6,42 @@
       </div>
     </div>
     <div class="item zoom">
-      <div class="item-parent">
-        <Match name=""></Match>
-        <strong class="item-order">#9</strong>
-      </div>
-      <div class="pair">
+      <div>
         <div class="item-childrens">
           <div class="item-child">
             <MatchRound order="8">
-              <Match slot="parent" name=""></Match>
+              <Match slot="parent" name="湘北"></Match>
               <MatchRound order="6" slot="firstChild">
-                <Match slot="parent" name=""></Match>
+                <Match slot="parent" name="湘北"></Match>
                 <MatchRound slot="firstChild" order="2">
-                  <Match slot="parent" name=""></Match>
+                  <Match slot="parent" name="The Avengers"></Match>
                   <Match slot="firstChild" name="The Avengers"></Match>
                   <Match slot="secondChild" name="Team 絲襪"></Match>
                 </MatchRound>
                 <MatchRound slot="secondChild" order="3">
-                  <Match slot="parent" name=""></Match>
+                  <Match slot="parent" name="湘北"></Match>
                   <Match slot="firstChild" name="湘北"></Match>
                   <MatchRound slot="secondChild" order="1">
-                    <Match slot="parent" name=""></Match>
+                    <Match slot="parent" name="魔關羽隊"></Match>
                     <Match slot="firstChild" name="Team Ray"></Match>
                     <Match slot="secondChild" name="魔關羽隊"></Match>
                   </MatchRound>
                 </MatchRound>
               </MatchRound>
               <MatchRound order="7" slot="secondChild">
-                <Match slot="parent" name=""></Match>
+                <Match slot="parent" name="Team 絲襪"></Match>
                 <MatchRound slot="firstChild" order="5">
-                  <Match slot="parent" name=""></Match>
+                  <Match slot="parent" name="Team 絲襪"></Match>
                   <MatchRound slot="firstChild" order="4">
-                    <Match slot="parent" name=""></Match>
-                    <Match slot="firstChild" name=""></Match>
-                    <Match slot="secondChild" name=""></Match>
+                    <Match slot="parent" name="Team 絲襪"></Match>
+                    <Match slot="firstChild" name="Team Ray"></Match>
+                    <Match slot="secondChild" name="Team 絲襪"></Match>
                   </MatchRound>
-                  <Match slot="secondChild" name=""></Match>
+                  <Match slot="secondChild" name="魔關羽隊"></Match>
                 </MatchRound>
-                <Match slot="secondChild" name=""></Match>
+                <Match slot="secondChild" name="The Avengers"></Match>
               </MatchRound>
             </MatchRound>
-          </div>
-          <div class="item-child">
-            <Match name=""></Match>
           </div>
         </div>
       </div>
