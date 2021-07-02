@@ -9,6 +9,11 @@
       <h1 class="flex-none px-6 p w-full font-bold">{{ team.shortName }}</h1>
       <div class="flex-none w-full md:w-1/3 relative p-8">
         <img class="w-full object-fit" :src="imageUrl" :alt="team.shortName">
+        <div v-if="team.desc" class="w-full my-4">
+          <div class="text-3xl text-indigo-500 text-left leading-tight h-3">“</div>
+          <p class="text-sm text-gray-600 text-center px-5">{{ team.desc }}</p>
+          <div class="text-3xl text-indigo-500 text-right leading-tight h-3 -mt-3">”</div>
+        </div>
       </div>
       <div class="flex-none p-4 px-6 w-full md:w-1/3 rounded md:rounded-r-none">
         <table class="mt-4 w-full">

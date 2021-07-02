@@ -5,7 +5,7 @@
     </div>
     <div class="p-4">
       <p class="uppercase tracking-wide text-sm font-bold text-indigo mb-1">{{ team.name }}</p>
-      <p class="mt-1 font-bold text-3xl text-gray-900">{{ team.shortName }}</p>
+      <p class="mt-2 font-bold text-2xl text-gray-900">{{ team.shortName }}</p>
     </div>
     <div class="flex p-4 border-t border-gray-300 text-gray-700">
       <div class="flex-1 inline-flex items-center">

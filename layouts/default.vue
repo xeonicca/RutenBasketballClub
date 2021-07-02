@@ -18,7 +18,7 @@
             <div class="ml-3">
               <p class="mt-1 leading-normal">社團相簿</p>
               <p class="text-indigo text-sm mt-1"><a class="no-underline text-indigo hover:text-indigo-dark hover:cursor-pointer" href="http://docs.ruten.tw/drive/d/f/529684832293269626" target="_blank">2020</a></p>
-              <p class="text-indigo text-sm mt-1"><a class="no-underline text-indigo hover:text-indigo-dark hover:cursor-pointer" href="http://docs.ruten.tw/drive/d/f/596551179402523696" target="_blank">2021</a></p>
+              <p class="text-indigo text-sm mt-1"><a class="no-underline text-indigo hover:text-indigo-dark hover:cursor-pointer" href="http://docs.ruten.tw/drive/d/f/596551807568755292" target="_blank">2021</a></p>
             </div>
           </div>
         </div>
