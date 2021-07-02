@@ -56,7 +56,7 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     ['@nuxtjs/google-gtag', {
-      id: 'G-90R5ZRKMSK',
+      id: 'GTM-NPMX4JX',
       debug: isDev
     }]
   ],
