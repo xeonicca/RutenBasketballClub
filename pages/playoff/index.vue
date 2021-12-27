@@ -2,7 +2,7 @@
   <div class="flex flex-1 flex-col md:px-6 pt-10" id="content">
     <div class="px-6 md:px-0 flex justify-between items-center -order-1">
       <div>
-        <h2 class="font-normal font-bold text-xl">第二屆露天籃球社季後賽</h2>
+        <h2 class="font-bold text-xl">第二屆露天籃球社季後賽</h2>
       </div>
     </div>
     <div class="item zoom">
