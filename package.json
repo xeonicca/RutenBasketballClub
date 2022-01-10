@@ -29,6 +29,6 @@
     "prettier": "^2.5.1",
     "qs": "^6.10.2",
     "random-avatar-generator": "^2.0.0",
-    "surge": "^0.23.0"
+    "surge": "^0.23.1"
   }
 }
