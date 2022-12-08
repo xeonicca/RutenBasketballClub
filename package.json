@@ -26,7 +26,7 @@
     "@nuxtjs/tailwindcss": "^4.2.1",
     "eslint-config-prettier": "^8.3.0",
     "lodash": "^4.17.21",
-    "prettier": "^2.5.1",
+    "prettier": "^2.8.1",
     "qs": "^6.10.3",
     "random-avatar-generator": "^2.0.0",
     "surge": "^0.23.1"
